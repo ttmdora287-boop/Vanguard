@@ -1,0 +1,278 @@
+/* Vanguard Earthquake Risk Reduction*/
+.navbar {
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(13, 134, 215, 0.635);
+  z-index: 1020;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: #176faa;
+}
+
+.text-dark-blue {
+  color: #1778b9 !important;
+}
+
+.bg-dark-blue {
+  background-color: #1495ec !important;
+}
+
+.hero-section {
+  position: relative;
+  background: url('media/beforeafter.jpg') center/cover no-repeat; 
+  padding: 70px 0 50px 0;
+  border-bottom: 1px solid #c7e7ff;
+}
+
+.hero-menu-toggle {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  z-index: 10;
+}
+
+.hero-menu-toggle .btn {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #155e8e;
+  color: #0e7bc4;
+  box-shadow: 0 2px 8px rgba(11, 60, 93, 0.12);
+  transition: all 0.25s ease;
+}
+
+.hero-menu-toggle .btn:hover {
+  background-color: #0973ba;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-dark-blue, .btn-primary {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #158ddc;
+  border: 1px solid #0e78be;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.btn-dark-blue:hover, .btn-primary:hover {
+  background-color: #0c72b7;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-blue {
+  background-color: #0d7ac2;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  transition: all 0.25s ease;
+}
+
+.btn-blue:hover {
+  background-color: #062338;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgb(11, 127, 205);
+}
+
+.side-btn {
+  min-width: 140px;
+  box-shadow: 0 4px 12px rgba(13, 134, 226, 0.66);
+  font-weight: 600;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(11, 136, 219, 0.804);
+}
+
+.progress {
+  height: 12px;
+  border-radius: 6px;
+  background-color: #eff6ff;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #E6F0FA;
+  color: #0b5c92;
+}
+
+footer {
+  background-color: rgb(35, 65, 90);
+}
+
+.background {
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg, 
+    #c7e7ff 0%,
+    #d9f0ff 20%, 
+    #ebfbff 40%, 
+    #fafcff 60%, 
+    #e0effd 80%, 
+    #d0ecff 100%
+  );
+  background-attachment: fixed;
+}
+
+.seemore {
+  background-color: #0d6dae; 
+  color: white;
+  border: none;
+  font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(11, 60, 93, 0.15);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.seemore:hover {
+  background-color: #045691;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(11, 60, 93, 0.25);
+}
+
+/* Risk Map */
+.map-container {
+  height: 480px;
+  width: 100%;
+  z-index: 1;
+}
+
+.custom-zoom-controls {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.custom-zoom-controls .btn {
+  width: 36px;
+  height: 36px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.card-img-custom {
+  height: 180px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.extra-small {
+  font-size: 0.75rem;
+}
+
+/* RESPONSIVE FIXES */
+@media (max-width: 991.98px) {
+  .hero-section {
+    padding: 60px 0 40px 0;
+  }
+  .map-container {
+    height: 380px;
+  }
+  .offcanvas {
+    width: 300px !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero-menu-toggle {
+    position: static;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .map-container {
+    height: 320px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .map-container {
+    height: 280px;
+  }
+  .card-img-custom {
+    height: 160px;
+  }
+}
+
+/* Hero section for Quiz Page */
+.quiz-hero-section {
+  position: relative;
+  background: url('media/blue.jpg') center/cover no-repeat; height: 100%; 
+  border-bottom: 1px solid rgba(11, 60, 93, 0.2);
+  padding: 70px 0 50px 0;
+}
+
+/* Option Row Hover  */
+.option-row {
+  transition: all 0.2s ease;
+  border-color: #e2e8f0 !important;
+}
+
+.option-row:hover {
+  background-color: #f8fafc !important;
+  border-color: #94a3b8 !important;
+}
+
+/* Correct Answer */
+.option-row.correct-selected {
+  background-color: #d1fae5 !important;
+  border-color: #34d399 !important;
+}
+
+.option-row.correct-selected label {
+  color: #065f46 !important;
+  font-weight: 600;
+}
+
+/* Incorrect Answer Highlight  */
+.option-row.incorrect-selected {
+  background-color: #fee2e2 !important;
+  border-color: #f87171 !important;
+}
+
+.option-row.incorrect-selected label {
+  color: #991b1b !important;
+  font-weight: 600;
+}
+
+/* after answering */
+.soft-feedback-success {
+  background-color: #d1fae5 !important;
+  color: #065f46 !important;
+  border: 1px solid #34d399;
+}
+
+.soft-feedback-danger {
+  background-color: #fee2e2 !important;
+  color: #991b1b !important;
+  border: 1px solid #f87171;
+}

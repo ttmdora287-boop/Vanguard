@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VANGUARD - Earthquake Knowledge & Preparedness Quiz</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="shortcut icon" href="../media/logo.png">
+</head>
+<body class="background">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top px-2 px-sm-3" data-aos="fade-down">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+        <img src="../media/logo.png" alt="logo" width="40" height="40" class="img-fluid">
+        <span>VANGUARD</span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto flex-column flex-lg-row gap-2 gap-lg-3 fw-medium my-2 my-lg-0">
+          <li class="nav-item"><a class="nav-link text-secondary" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary" href="riskmap.html">Risk map</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary" href="preparedness.html">Preparedness</a></li>
+          <li class="nav-item"><a class="nav-link active text-dark-blue fw-bold" href="quiz.html">Quiz</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary" href="action.html">Action</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary" href="aboutus.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MENU TOGGLE -->
+  <div class="text-center position-relative px-3">
+    <div class="hero-menu-toggle px-2 d-none d-lg-block">
+      <button class="btn rounded-pill px-3 py-2 fw-semibold d-flex align-items-center gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+        <i class="bi bi-list fs-5"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- OFFCANVAS MENU -->
+  <div class="offcanvas offcanvas-end shadow" tabindex="-1" id="offcanvasNavbar">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title fw-bold text-dark-blue d-flex align-items-center gap-2">
+        <img src="../media/logo.png" alt="logo" width="35" height="35">
+        VANGUARD Menu
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <li class="nav-item mb-2"><a class="nav-link" href="#geq"><i class="bi bi-geo-alt me-2"></i>General Earthquake Quiz</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#peq"><i class="bi bi-tags me-2"></i>Preparedness Earthquake Quiz</a></li>
+      </ul>
+      <div class="mt-4 p-3 rounded border shadow-sm">
+        <small class="text-muted d-block mb-1">Year 9 PBL Project</small>
+        <strong class="text-dark">Earthquake Risk Reduction</strong>
+      </div>
+    </div>
+  </div>
+
+  <header class="quiz-hero-section text-center py-5" data-aos="fade">
+    <div class="container py-4" data-aos="zoom-in" data-aos-delay="200">
+      <h2 class="display-4 fw-bold text-dark-blue fst-italic mb-3">Earthquake Knowledge Quizzes</h2>
+      <div class="mt-4">
+        <a href="#geq" class="btn seemore px-4 py-2 rounded-pill fw-bold shadow-sm">
+          <i class="bi bi-play-circle-fill me-2"></i> Take the Quiz
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT: CATEGORIES & CARDS -->
+  <main class="container py-4 mb-5" id="geq">
+    
+    <!-- CATEGORY 1: GENERAL EARTHQUAKE KNOWLEDGE -->
+    <div class="mb-5 mt-3" data-aos="fade-up">
+      <div class="d-flex align-items-center mb-4">
+        <div class="bg-primary text-white p-2 rounded-circle me-3 d-flex align-items-center justify-content-center shadow-sm" style="width: 45px; height: 45px;">
+          <i class="bi bi-book fs-5"></i>
+        </div>
+        <div>
+          <h2 class="h3 fw-bold text-dark-blue fst-italic mb-0">General Earthquake Knowledge</h2>
+          <p class="text-muted small mb-0">Test your scientific understanding of seismic mechanics, fault systems, and historical contexts.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Easy Card -->
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card p-4 h-100 d-flex flex-column justify-content-between shadow-sm border-0">
+            <div>
+              <span class="badge bg-success mb-3 px-3 py-1 rounded-pill">Easy Level</span>
+              <h3 class="h4 fw-bold mb-3 text-dark">Basics & Terminology</h3>
+              <p class="text-muted small">An introductory 5-question quiz testing basic earthquake vocabulary, seismic waves, and scales.</p>
+            </div>
+            <div class="mt-4 text-center">
+              <button class="btn seemore w-100 rounded-pill fw-bold py-2 justify-content-center" onclick="openQuizModal('General', 'Easy')">
+                Play Now <i class="bi bi-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Medium Card -->
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card p-4 h-100 d-flex flex-column justify-content-between shadow-sm border-0">
+            <div>
+              <span class="badge bg-warning text-dark mb-3 px-3 py-1 rounded-pill">Medium Level</span>
+              <h3 class="h4 fw-bold mb-3 text-dark">Fault Lines & Geology</h3>
+              <p class="text-muted small">Explore regional fault mechanics, energy releases, and geological structures like the Sagaing Fault.</p>
+            </div>
+            <div class="mt-4 text-center">
+              <button class="btn seemore w-100 rounded-pill fw-bold py-2 justify-content-center" onclick="openQuizModal('General', 'Medium')">
+                Play Now <i class="bi bi-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hard Card -->
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+          <div class="card p-4 h-100 d-flex flex-column justify-content-between shadow-sm border-0">
+            <div>
+              <span class="badge bg-danger mb-3 px-3 py-1 rounded-pill">Hard Level</span>
+              <h3 class="h4 fw-bold mb-3 text-dark">Seismic Science Expert</h3>
+              <p class="text-muted small">Advanced questions on wave attenuation, soil liquefaction physics, and historical mega-thrust events.</p>
+            </div>
+            <div class="mt-4 text-center">
+              <button class="btn seemore w-100 rounded-pill fw-bold py-2 justify-content-center" onclick="openQuizModal('General', 'Hard')">
+                Play Now <i class="bi bi-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATEGORY 2: EARTHQUAKE PREPAREDNESS -->
+    <div class="mt-5 pt-3" id="peq" data-aos="fade-up">
+      <div class="d-flex align-items-center mb-4">
+        <div class="bg-success text-white p-2 rounded-circle me-3 d-flex align-items-center justify-content-center shadow-sm" style="width: 45px; height: 45px;">
+          <i class="bi bi-shield-check fs-5"></i>
+        </div>
+        <div>
+          <h2 class="h3 fw-bold text-dark-blue fst-italic mb-0">Earthquake Preparedness & Survival</h2>
+          <p class="text-muted small mb-0">Evaluate your emergency readiness, household survival planning, and immediate response behavior.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Easy Card -->
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card p-4 h-100 d-flex flex-column justify-content-between shadow-sm border-0">
+            <div>
+              <span class="badge bg-success mb-3 px-3 py-1 rounded-pill">Easy Level</span>
+              <h3 class="h4 fw-bold mb-3 text-dark">Drop, Cover & Hold</h3>
+              <p class="text-muted small">Learn and test foundational indoor and outdoor immediate safety steps when shaking starts.</p>
+            </div>
+            <div class="mt-4 text-center">
+              <button class="btn seemore w-100 rounded-pill fw-bold py-2 justify-content-center" onclick="openQuizModal('Preparedness', 'Easy')">
+                Play Now <i class="bi bi-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Medium Card -->
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card p-4 h-100 d-flex flex-column justify-content-between shadow-sm border-0">
+            <div>
+              <span class="badge bg-warning text-dark mb-3 px-3 py-1 rounded-pill">Medium Level</span>
+              <h3 class="h4 fw-bold mb-3 text-dark">Go-Bag & Supplies</h3>
+              <p class="text-muted small">Test your knowledge regarding emergency kit contents, water storage ratios, and first-aid supplies.</p>
+            </div>
+            <div class="mt-4 text-center">
+              <button class="btn seemore w-100 rounded-pill fw-bold py-2 justify-content-center" onclick="openQuizModal('Preparedness', 'Medium')">
+                Play Now <i class="bi bi-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hard Card -->
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+          <div class="card p-4 h-100 d-flex flex-column justify-content-between shadow-sm border-0">
+            <div>
+              <span class="badge bg-danger mb-3 px-3 py-1 rounded-pill">Hard Level</span>
+              <h3 class="h4 fw-bold mb-3 text-dark">Post-Disaster Crisis Ops</h3>
+              <p class="text-muted small">Complex scenario-based challenges handling gas leaks, structural collapse risks, and communication blackouts.</p>
+            </div>
+            <div class="mt-4 text-center">
+              <button class="btn seemore w-100 rounded-pill fw-bold py-2 justify-content-center" onclick="openQuizModal('Preparedness', 'Hard')">
+                Play Now <i class="bi bi-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- INTERACTIVE QUIZ MODAL -->
+  <div class="modal fade" id="quizModal" tabindex="-1" aria-labelledby="quizModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow-lg rounded-4">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title fw-bold" id="quizModalLabel">
+            <i class="bi bi-patch-question-fill me-2"></i> <span id="modalTitleText">Earthquake Quiz</span>
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4" id="quizModalBody">
+      
+        </div>
+        <div class="modal-footer bg-light">
+          <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary rounded-pill px-4" id="nextQuestionBtn" onclick="nextQuestion()" style="display:none;">Next Question</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="py-4 text-white mt-5" data-aos="fade">
+    <div class="container">
+      <div class="row mb-4 text-center text-md-start">
+        <div class="col-12">
+          <p class="text-light opacity-75 small">Earthquake Risk Reduction - Vanguard Project</p>
+        </div>
+      </div>
+
+      <div class="row text-center text-md-start">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <h5 class="fw-bold mb-3 border-bottom border-light pb-2 d-inline-block">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="../index.html" class="text-white text-decoration-none hover-link">Home</a></li>
+            <li class="mb-2"><a href="riskmap.html" class="text-white text-decoration-none hover-link">Risk Map</a></li>
+            <li class="mb-2"><a href="preparedness.html" class="text-white text-decoration-none hover-link">Preparedness</a></li>
+            <li class="mb-2"><a href="quiz.html" class="text-white text-decoration-none hover-link">Quiz</a></li>
+            <li class="mb-2"><a href="action.html" class="text-white text-decoration-none hover-link">Action</a></li>
+            <li class="mb-2"><a href="aboutus.html" class="text-white text-decoration-none hover-link">About Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6">
+          <h5 class="fw-bold mb-3 border-bottom border-light pb-2 d-inline-block">Contact Us</h5>
+          <ul class="list-unstyled text-light">
+            <li class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i>EDUSN Mandalay Campus</li>
+            <li class="mb-2"><i class="bi bi-envelope-fill me-2"></i>vanguardstudents@gmail.com</li>
+            <li class="mb-2"><i class="bi bi-telephone-fill me-2"></i>+95 0717130406</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="my-4 border-light opacity-50">
+
+      <div class="row">
+        <div class="col-12 text-center">
+          <small class="text-light">Copyright &copy; 2026 VANGUARD. All Rights Reserved.</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    const quizData = {
+      "General-Easy": [
+        {
+          q: "What instrument is used to record and measure seismic waves?",
+          options: ["Barometer", "Seismograph", "Anemometer", "Thermometer"],
+          answer: 1,
+          explanation: "A seismograph detects and records ground vibrations caused by seismic waves."
+        },
+        {
+          q: "What does the Richter scale measure?",
+          options: ["Earthquake duration", "Magnitude (energy released)", "Structural damage cost", "Surface fault length"],
+          answer: 1,
+          explanation: "The Richter scale quantifies the amount of seismic energy released by an earthquake."
+        },
+        {
+          q: "What are giant sea waves caused by underwater earthquakes called?",
+          options: ["Tornadoes", "Hurricanes", "Tsunamis", "Monsoons"],
+          answer: 2,
+          explanation: "Tsunamis are powerful ocean waves generated by tectonic displacements on the seabed."
+        },
+        {
+          q: "What layer of the Earth's structure is broken into moving tectonic plates?",
+          options: ["Core", "Lithosphere / Crust", "Atmosphere", "Stratosphere"],
+          answer: 1,
+          explanation: "The lithosphere comprises the crust and rigid upper mantle, forming tectonic plates."
+        },
+        {
+          q: "What is the point on the Earth's surface directly above an earthquake's origin called?",
+          options: ["Focus", "Epicenter", "Fault line", "Crater"],
+          answer: 1,
+          explanation: "The epicenter is the exact point on the surface directly above the underground focus."
+        }
+      ],
+      "General-Medium": [
+        {
+          q: "Which major active fault system runs directly through Mandalay, Myanmar?",
+          options: ["San Andreas Fault", "Sagaing Fault", "Alpine Fault", "Sumatra Subduction Zone"],
+          answer: 1,
+          explanation: "The Sagaing Fault is a major continental strike-slip fault passing near Mandalay urban zones."
+        },
+        {
+          q: "What are the primary waves that travel fastest through the earth during an earthquake called?",
+          options: ["S-waves", "Surface waves", "P-waves (Primary waves)", "Rayleigh waves"],
+          answer: 2,
+          explanation: "P-waves are compressional primary waves that arrive first at seismic recording stations."
+        },
+        {
+          q: "What type of fault is characterized by rocks sliding horizontally past each other?",
+          options: ["Normal fault", "Reverse fault", "Strike-slip fault", "Thrust fault"],
+          answer: 2,
+          explanation: "Strike-slip faults involve lateral or horizontal movement, typical of the Sagaing Fault."
+        },
+        {
+          q: "How much more energy does an earthquake of magnitude 7 release compared to magnitude 6 on the logarithmic scale?",
+          options: ["About 2 times more", "About 10 times more", "About 32 times more", "Exactly 100 times more"],
+          answer: 2,
+          explanation: "Each whole number increase on the moment magnitude scale represents roughly 32 times more energy."
+        },
+        {
+          q: "What is the underground point of origin where the rock first breaks and slips called?",
+          options: ["Epicenter", "Focus (Hypocenter)", "Fault scarp", "Subduction zone"],
+          answer: 1,
+          explanation: "The hypocenter or focus is where the seismic rupture begins underground."
+        }
+      ],
+      "General-Hard": [
+        {
+          q: "What geological phenomenon occurs when water-saturated granular soil temporarily loses strength during shaking?",
+          options: ["Subduction", "Soil Liquefaction", "Tectonic Uplift", "Magma Intrusion"],
+          answer: 1,
+          explanation: "Liquefaction causes loose soil to behave like a liquid, heavily threatening building foundations."
+        },
+        {
+          q: "Which seismic waves create rolling motions along the Earth's surface and cause the most structural damage?",
+          options: ["P-waves", "S-waves", "Love and Rayleigh waves", "Core shadow waves"],
+          answer: 2,
+          explanation: "Surface waves (Love and Rayleigh waves) travel slower but produce severe rolling ground displacement."
+        },
+        {
+          q: "What is seismic wave attenuation?",
+          options: ["Amplification of waves in soft basins", "The decrease in wave amplitude and energy as distance from the source increases", "The bouncing of waves off the core", "The conversion of S-waves to P-waves"],
+          answer: 1,
+          explanation: "Attenuation describes how seismic energy dissipates and weakens over distance."
+        },
+        {
+          q: "What tectonic plate collision created the high mountain ranges and regional seismic activity across South/Southeast Asia?",
+          options: ["Pacific and Eurasian plates", "Indian and Eurasian plates", "African and Arabian plates", "Nazca and South American plates"],
+          answer: 1,
+          explanation: "The northward movement and collision of the Indian Plate into the Eurasian Plate drives regional faulting."
+        },
+        {
+          q: "What does the Modified Mercalli Intensity (MMI) scale measure that magnitude scales do not?",
+          options: ["Total energy released", "Deep mantle temperature", "Observed effects, human reaction, and structural damage at a specific location", "Rupture velocity"],
+          answer: 2,
+          explanation: "MMI measures experienced shaking severity and localized damage rather than intrinsic energy release."
+        }
+      ],
+      "Preparedness-Easy": [
+        {
+          q: "What is the recommended immediate action if you are indoors when an earthquake starts?",
+          options: ["Run outside immediately", "Drop, Cover under a sturdy table, and Hold On", "Stand near glass windows", "Use the elevator to evacuate"],
+          answer: 1,
+          explanation: "Drop, Cover, and Hold On protects you from falling debris and structural collapse."
+        },
+        {
+          q: "Where should you go if you are outdoors during a tremor?",
+          options: ["Under tall buildings", "Near electric power poles", "Open area away from buildings, trees, and power lines", "Inside a multi-story car park"],
+          answer: 2,
+          explanation: "An open space prevents injuries from falling bricks, glass, or collapsing facades."
+        },
+        {
+          q: "If you are driving a vehicle when an earthquake hits, what should you do?",
+          options: ["Speed up to outrun the shaking", "Stop safely away from bridges, overpasses, and power lines, and stay inside", "Abandon the car in the middle of the road", "Park directly under a highway overpass"],
+          answer: 1,
+          explanation: "Pulling over to a clear location keeps your vehicle safe from overhead bridge collapses."
+        },
+        {
+          q: "Why should you avoid using elevators during or immediately after an earthquake?",
+          options: ["They move too slowly", "Power outages and structural twisting can trap you inside", "They are reserved for pets", "Elevator buttons are hard to press"],
+          answer: 1,
+          explanation: "Power loss and shaft distortion make elevators extremely dangerous during earthquakes."
+        },
+        {
+          q: "What should you check on after the shaking stops to ensure family safety?",
+          options: ["Social media follower counts", "Immediate injuries, gas leaks, and structural hazards", "Your television channels", "The weather forecast for tomorrow"],
+          answer: 1,
+          explanation: "Checking for injuries and utility hazards is the top post-earthquake safety priority."
+        }
+      ],
+      "Preparedness-Medium": [
+        {
+          q: "How much emergency drinking water should be stored per person per day?",
+          options: ["1 cup", "1 gallon (approx. 3.8 liters)", "1 tablespoon", "5 liters"],
+          answer: 1,
+          explanation: "Standard survival guidelines recommend 1 gallon of water per person per day for drinking and sanitation."
+        },
+        {
+          q: "Which item is crucial to include in an emergency Go-Bag for communication during power outages?",
+          options: ["A large television", "Battery-powered or hand-crank radio", "An electric space heater", "A desktop computer"],
+          answer: 1,
+          explanation: "A crank or battery radio ensures you can receive emergency broadcast instructions."
+        },
+        {
+          q: "How long should your emergency home supply kit be designed to sustain your household self-sufficiently?",
+          options: ["At least 3 hours", "At least 3 days to 2 weeks", "Exactly 24 minutes", "6 months"],
+          answer: 1,
+          explanation: "Emergency response agencies recommend maintaining at least 3 days (ideally up to 2 weeks) of supplies."
+        },
+        {
+          q: "What is an important safety step regarding heavy furniture (like bookshelves) in earthquake-prone zones?",
+          options: ["Leave them unanchored so they slide easily", "Bolt or strap heavy furniture securely to wall studs", "Place heavy items on the top shelves", "Stack glassware on top"],
+          answer: 1,
+          explanation: "Securing heavy furniture prevents them from tipping over onto people during severe shaking."
+        },
+        {
+          q: "What type of footwear should be kept easily accessible near your bed during earthquake season?",
+          options: ["Thick-soled sturdy shoes or boots", "Fluffy indoor slippers", "High heels", "Bare feet"],
+          answer: 0,
+          explanation: "Sturdy shoes protect your feet from broken glass and sharp debris scattered post-earthquake."
+        }
+      ],
+      "Preparedness-Hard": [
+        {
+          q: "What is the safest protocol regarding utility lines immediately following a major damaging earthquake?",
+          options: ["Turn on all kitchen lights to check wiring", "Shut off main gas valves only if you smell gas, hear a hiss, or suspect a leak", "Ignore water pipe leaks", "Run electrical appliances immediately"],
+          answer: 1,
+          explanation: "Shutting off gas valves prevents secondary fires caused by ruptured lines."
+        },
+        {
+          q: "If you are trapped under heavy debris or rubble following a structural collapse, what is the recommended signaling method?",
+          options: ["Scream continuously until your voice gives out", "Tap rhythmically on a pipe or wall or use a whistle, and avoid shouting", "Light a match to see your surroundings", "Jump up and down"],
+          answer: 1,
+          explanation: "Tapping or whistling saves oxygen and helps rescuers pinpoint your location through acoustic vibration."
+        },
+        {
+          q: "What structural design feature uses rubber and steel pads to decouple a building's superstructure from its foundation during quakes?",
+          options: ["Base isolation systems", "Hollow glass walls", "Plastic roof tiling", "Unreinforced brickwork"],
+          answer: 0,
+          explanation: "Base isolation absorbs horizontal seismic forces, protecting the building structure above."
+        },
+        {
+          q: "During a severe post-earthquake evacuation in a smoke-filled or dusty room, what posture should you maintain?",
+          options: ["Sprint upright at full speed", "Crawl on hands and knees where cleaner air is closer to the floor", "Lie flat on your back", "Walk backward with your eyes closed"],
+          answer: 1,
+          explanation: "Staying low keeps you beneath dense toxic smoke and falling particulate matter."
+        },
+        {
+          q: "When communication networks are jammed after a disaster, what is the best texting practice to check on family?",
+          options: ["Keep redialing voice calls repeatedly", "Send concise SMS text messages or use digital emergency check-in apps", "Post live-stream video constantly", "Send heavy multimedia files"],
+          answer: 1,
+          explanation: "SMS text messages require minimal bandwidth and successfully transmit when voice networks fail."
+        }
+      ]
+    };
+
+    let currentCategory = "";
+    let currentDifficulty = "";
+    let questionsList = [];
+    let currentIndex = 0;
+    let score = 0;
+
+    function openQuizModal(category, difficulty) {
+      currentCategory = category;
+      currentDifficulty = difficulty;
+      const key = `${category}-${difficulty}`;
+      questionsList = quizData[key] || [];
+      
+      currentIndex = 0;
+      score = 0;
+
+      document.getElementById('modalTitleText').innerText = `${category} Quiz (${difficulty} Level)`;
+      loadQuestion();
+
+      const modal = new bootstrap.Modal(document.getElementById('quizModal'));
+      modal.show();
+    }
+
+    function loadQuestion() {
+      const body = document.getElementById('quizModalBody');
+      const nextBtn = document.getElementById('nextQuestionBtn');
+      nextBtn.style.display = 'none';
+
+      if (currentIndex >= questionsList.length) {
+        body.innerHTML = `
+          <div class="text-center py-4">
+            <i class="bi bi-trophy-fill text-warning display-3 mb-3"></i>
+            <h3 class="fw-bold">Quiz Completed!</h3>
+            <p class="text-muted">Your Score: <span class="text-primary fw-bold">${score}</span> / ${questionsList.length}</p>
+            <p class="small text-secondary">Thank you for practicing disaster resilience with Vanguard!</p>
+            <button class="btn btn-primary rounded-pill px-4 mt-2" onclick="location.reload()">Done</button>
+          </div>
+        `;
+        return;
+      }
+
+      const qObj = questionsList[currentIndex];
+      let optionsHtml = '';
+      qObj.options.forEach((opt, idx) => {
+        optionsHtml += `
+          <div class="form-check p-3 mb-2 border rounded-3 option-row bg-white shadow-sm" style="cursor:pointer;" onclick="selectOption(${idx})">
+            <input class="form-check-input ms-1" type="radio" name="quizOption" id="opt${idx}" value="${idx}">
+            <label class="form-check-label ms-2 fw-medium text-dark" for="opt${idx}" style="cursor:pointer;">${opt}</label>
+          </div>
+        `;
+      });
+
+      body.innerHTML = `
+        <div class="mb-3 d-flex justify-content-between text-muted small">
+          <span>Question ${currentIndex + 1} of ${questionsList.length}</span>
+          <span>Score: ${score}</span>
+        </div>
+        <h5 class="fw-bold text-dark mb-3">${qObj.q}</h5>
+        <div class="mb-3">${optionsHtml}</div>
+        <div id="quizFeedback" class="mt-3 fw-bold small"></div>
+      `;
+    }
+
+    function selectOption(selectedIndex) {
+      const qObj = questionsList[currentIndex];
+      const feedbackEl = document.getElementById('quizFeedback');
+      const nextBtn = document.getElementById('nextQuestionBtn');
+      
+      const optionRows = document.querySelectorAll('.option-row');
+      optionRows.forEach((row, idx) => {
+        row.style.pointerEvents = 'none';
+        if (idx === qObj.answer) {
+          row.classList.add('correct-selected');
+        } else if (idx === selectedIndex) {
+          row.classList.add('incorrect-selected');
+        }
+      });
+
+      document.getElementById('opt' + selectedIndex).checked = true;
+
+      if (selectedIndex === qObj.answer) {
+        score++;
+        feedbackEl.className = "mt-3 fw-bold small p-3 soft-feedback-success rounded";
+        feedbackEl.innerHTML = `<i class="bi bi-check-circle-fill me-1"></i> Correct! ${qObj.explanation}`;
+      } else {
+        feedbackEl.className = "mt-3 fw-bold small p-3 soft-feedback-danger rounded";
+        feedbackEl.innerHTML = `<i class="bi bi-x-circle-fill me-1"></i> Incorrect. ${qObj.explanation}`;
+      }
+
+      currentIndex++;
+      nextBtn.style.display = 'inline-block';
+      if (currentIndex >= questionsList.length) {
+        nextBtn.innerText = "View Final Score";
+      } else {
+        nextBtn.innerText = "Next Question";
+      }
+    }
+
+    function nextQuestion() {
+      loadQuestion();
+    }
+
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VANGUARD - Community Action & Support</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="shortcut icon" href="../media/logo.png">
+</head>
+<body class="background" data-bs-spy="scroll" data-bs-target="#actionNavbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top px-2 px-sm-3" id="actionNavbar" data-aos="fade-down">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+        <img src="../media/logo.png" alt="logo" width="40" height="40" class="img-fluid">
+        <span>VANGUARD</span>
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto flex-column flex-lg-row gap-2 gap-lg-3 fw-medium my-2 my-lg-0">
+          <li class="nav-item"><a class="nav-link text-secondary" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary" href="riskmap.html">Risk Map</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary" href="preparedness.html">Preparedness</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary" href="quiz.html">Quiz</a></li>
+          <li class="nav-item"><a class="nav-link active text-dark-blue fw-bold" href="action.html">Action</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary" href="aboutus.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MENU TOGGLE -->
+  <div class="text-center position-relative px-3">
+    <div class="hero-menu-toggle px-2 d-none d-lg-block">
+      <button class="btn rounded-pill px-3 py-2 fw-semibold d-flex align-items-center gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+        <i class="bi bi-list fs-5"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- OFFCANVAS MENU -->
+  <div class="offcanvas offcanvas-end shadow" tabindex="-1" id="offcanvasNavbar">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title fw-bold text-dark-blue d-flex align-items-center gap-2">
+        <img src="../media/logo.png" alt="logo" width="35" height="35">
+        VANGUARD Menu
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <li class="nav-item mb-2"><a class="nav-link" href="#hero-action"><i class="bi bi-stars me-2"></i>Action & Support Hub</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#donation-section"><i class="bi bi-heart-fill me-2"></i>Donation & Relief Support</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#volunteer-section"><i class="bi bi-people-fill me-2"></i>Pickup & Item Volunteering</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#conference-section"><i class="bi bi-mic-fill me-2"></i>Conference & Knowledge Sharing</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#certificate-preview"><i class="bi bi-award-fill me-2"></i>Example Certificate Version</a></li>
+      </ul>
+      <div class="mt-4 p-3 rounded border shadow-sm">
+        <small class="text-muted d-block mb-1">Year 9 PBL Project</small>
+        <strong class="text-dark">Earthquake Risk Reduction</strong>
+      </div>
+    </div>
+  </div>
+
+  <main class="container py-4 mt-2 mt-md-4">
+
+    <!-- HERO SECTION -->
+    <section class="text-center mb-5" id="hero-action" data-aos="fade-up">
+      <h2 class="display-5 fw-bold text-dark-blue fst-italic">Community Action & Disaster Support</h2>
+      <p class="col-lg-8 mx-auto lead fs-6 text-muted mt-2">
+        Since our core mission is reducing seismic risk, taking proactive steps <strong>before the next major earthquake</strong> is vital. Support our pre-disaster relief campaigns, coordinate item pickups if you are busy, or join our educational conferences and podcasts to build a resilient Mandalay.
+      </p>
+    </section>
+
+    <!-- SECTION 1: DONATION SIGN-IN & POPUP FORM -->
+    <section class="mb-5 py-4 border-bottom" id="donation-section" data-aos="fade-up">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6" data-aos="fade-right">
+          <div class="card p-4 shadow-sm border-0 h-100">
+            <span class="badge bg-primary w-auto mb-2 align-self-start">Pre-Disaster Relief</span>
+            <h3 class="fw-bold text-dark-blue">Pre-Earthquake Donation Campaign</h3>
+            <p class="text-muted small mb-3">
+              Help us stockpile emergency water, medical first-aid kits, and go-bag reserves <strong>before the next big disaster strikes</strong>. Contributions ensure our community stadiums and families are fully equipped ahead of time.
+            </p>
+            <ul class="text-muted small ps-3 mb-4">
+              <li class="mb-1">Support financial funds for structural safety reinforcement.</li>
+              <li class="mb-1">Donate physical items (flashlights, whistles, canned food, clean water).</li>
+              <li class="mb-1">Receive an official personalized <strong>Vanguard Philanthropist Certificate</strong> instantly upon completion!</li>
+            </ul>
+            <button class="btn seemore px-4 py-2 rounded-pill fw-bold w-100 justify-content-center" data-bs-toggle="modal" data-bs-target="#donationModal">
+              <i class="bi bi-heart-fill me-2"></i> Click Here to Donate
+            </button>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center" data-aos="fade-left">
+          <div class="card p-4 shadow-sm border-0 bg-white">
+            <img src="../media/donate.jpg" class="img-fluid rounded mb-3" style="max-height: 230px; object-fit: cover;" alt="Donation Support">
+            <h5 class="fw-bold text-dark">Empowering Resilience in Advance</h5>
+            <p class="text-muted small mb-0">Your timely contributions before an emergency happen create an unbreakable safety net for schools, orphanages, and neighborhoods across Mandalay.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: VOLUNTEERING (ITEM PICKUP FOR BUSY DONORS) -->
+    <section class="mb-5 py-4 border-bottom" id="volunteer-section" data-aos="fade-up">
+      <div class="row align-items-center g-4 flex-row-reverse">
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="card p-4 shadow-sm border-0 h-100">
+            <span class="badge bg-success w-auto mb-2 align-self-start">Flexible Community Support</span>
+            <h3 class="fw-bold text-dark-blue">Item Pickup & Away Volunteering</h3>
+            <p class="text-muted small mb-3">
+              Are you busy, unable to travel, or located far away? No problem! Our student volunteer dispatch team can arrange a home or office pickup for your relief items, or you can register to assist remotely with awareness coordination <strong>before the next earthquake</strong>.
+            </p>
+            
+            <form id="volunteerForm" onsubmit="handleVolunteerSubmit(event)">
+              <div class="mb-3">
+                <label class="form-label small fw-bold">Full Name</label>
+                <input type="text" class="form-control form-control-sm" id="volName" placeholder="Enter your full name" required>
+              </div>
+              <div class="row g-2 mb-3">
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold">Contact Number / Email</label>
+                  <input type="text" class="form-control form-control-sm" id="volContact" placeholder="Phone or Email" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold">Pickup Location / Township</label>
+                  <input type="text" class="form-control form-control-sm" id="volLocation" placeholder="e.g., Chan Aye Thar San, Mandalay" required>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label small fw-bold">What items are you willing to give away for pickup?</label>
+                <textarea class="form-control form-control-sm" id="volItems" rows="2" placeholder="e.g., Bottled water, canned foods, flashlights, blankets" required></textarea>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="volAgree" required>
+                <label class="form-check-label text-muted extra-small" for="volAgree">
+                  I am willing to support pre-disaster preparedness readiness ahead of future earthquakes.
+                </label>
+              </div>
+              <button type="submit" class="btn btn-blue btn-sm w-100 fw-bold py-2">
+                <p class="mb-0"><i class="bi bi-truck me-2"></i> Submit Pickup Request</p>
+              </button>
+            </form>
+            <div id="volSuccessAlert" class="alert alert-success mt-3 small d-none" role="alert">
+              <i class="bi bi-check-circle-fill me-2"></i> Thank you! Our Vanguard dispatch team will contact you soon to arrange item pickup.
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center" data-aos="fade-right">
+          <div class="card p-4 shadow-sm border-0 bg-white">
+            <img src="../media/eq2.jpg" class="img-fluid rounded mb-3" style="max-height: 230px; object-fit: cover;" alt="Volunteering">
+            <h5 class="fw-bold text-dark">No Distance is Too Far to Help</h5>
+            <p class="text-muted small mb-0">Even if you are busy or reside outside central downtown, your donated supplies are collected by our student dispatchers and pre-positioned in secure local staging areas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: CONFERENCE, PODCAST & PRESENTATIONS -->
+    <section class="mb-5 py-4 border-bottom" id="conference-section" data-aos="fade-up">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6" data-aos="fade-right">
+          <div class="card p-4 shadow-sm border-0 h-100">
+            <span class="badge bg-warning text-dark w-auto mb-2 align-self-start">Education & Outreach</span>
+            <h3 class="fw-bold text-dark-blue">Conferences, Podcasts & School Presentations</h3>
+            <p class="text-muted small mb-3">
+              Knowledge is our strongest shield. We host interactive conferences, expert podcast episodes with seismic geologists, and safety workshops specifically tailored for school children and local communities <strong>before the next disaster strikes</strong>.
+            </p>
+            
+            <form id="confForm" onsubmit="handleConfSubmit(event)">
+              <div class="mb-3">
+                <label class="form-label small fw-bold">Participant / Institution Name</label>
+                <input type="text" class="form-control form-control-sm" id="confName" placeholder="Your name or school/organization" required>
+              </div>
+              <div class="row g-2 mb-3">
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold">Select Session Type</label>
+                  <select class="form-select form-select-sm" id="confType" required>
+                    <option value="" selected disabled>Choose session...</option>
+                    <option value="Live Conference">Live Seismic Safety Conference</option>
+                    <option value="Podcast Episode">Vanguard Risk Reduction Podcast</option>
+                    <option value="Orphanage / School Workshop">Orphanage & School Safety Workshop</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold">Preferred Date</label>
+                  <input type="date" class="form-control form-control-sm" id="confDate" required>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-blue btn-sm w-100 fw-bold py-2">
+                <p class="mb-0"><i class="bi bi-calendar-check me-2"></i> Register for Session</p>
+              </button>
+            </form>
+            <div id="confSuccessAlert" class="alert alert-success mt-3 small d-none" role="alert">
+              <i class="bi bi-check-circle-fill me-2"></i> Registration successful! We will email you the conference link or schedule details.
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center" data-aos="fade-left">
+          <div class="card p-4 shadow-sm border-0 bg-white">
+            <img src="../media/ppt.jpg" class="img-fluid rounded mb-3" style="max-height: 230px; object-fit: cover;" alt="Conference Podcast">
+            <h5 class="fw-bold text-dark">Spreading Awareness to Vulnerable Groups</h5>
+            <p class="text-muted small mb-0">Our student team regularly presents live safety demonstrations, distributing whistles and survival guides to children and teachers across Mandalay.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: EXAMPLE VERSION OF THE CERTIFICATES (ORIGINAL CLEAN VERSION) -->
+    <section class="mb-5 py-4" id="certificate-preview" data-aos="zoom-in">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold text-dark-blue fst-italic">Example Version of the Certificates</h2>
+        <p class="text-muted">Donors and active supporters receive this official certificate of appreciation issued by Vanguard.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card p-5 shadow-lg border-4 border-warning rounded-4 text-center bg-white position-relative overflow-hidden">
+            <div class="position-absolute top-0 start-0 w-100 bg-dark-blue py-1 text-white extra-small fw-bold">
+              VANGUARD OFFICIAL DISASTER RISK REDUCTION RECOGNITION
+            </div>
+            <div class="mt-3">
+              <img src="../media/logo.png" alt="logo" width="60" height="60" class="img-fluid mb-2">
+              <h3 class="fw-bold text-dark-blue fst-italic">Certificate of Appreciation</h3>
+              <p class="text-muted small mb-3">This prestigious certificate is proudly presented to</p>
+              <h4 class="fw-bold text-dark border-bottom pb-2 d-inline-block px-4 mb-3">[ Donor / Supporter Name ]</h4>
+              <p class="text-muted small col-lg-10 mx-auto mb-4">
+                For outstanding contribution, philanthropic support, and proactive dedication toward <strong>Earthquake Risk Reduction</strong> and pre-disaster community preparedness in Mandalay, Myanmar.
+              </p>
+              <div class="row text-start small text-muted px-4 mt-4 border-top pt-3">
+                <div class="col-6">
+                  <strong>Date:</strong> November 9, 2026<br>
+                  <strong>Donation Type:</strong> Financial & Relief Supplies
+                </div>
+                <div class="col-6 text-end">
+                  <span class="d-block fst-italic fw-bold text-dark-blue">Vanguard Command Team</span>
+                  <small class="extra-small text-muted">EDUSN Mandalay Campus</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- DONATION POPUP MODAL -->
+  <div class="modal fade" id="donationModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 rounded-4 shadow-lg">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title fw-bold"><i class="bi bi-heart-fill me-2"></i> Vanguard Pre-Disaster Donation Form</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form id="donationForm" onsubmit="handleDonationSubmit(event)">
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label class="form-label small fw-bold">Full Name</label>
+                <input type="text" class="form-control" id="donorName" placeholder="Enter your full name" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label small fw-bold">Place / City / Township</label>
+                <input type="text" class="form-control" id="donorPlace" placeholder="e.g., Mandalay, Myanmar" required>
+              </div>
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label class="form-label small fw-bold">How will you donate?</label>
+                <select class="form-select" id="donationMethod" required>
+                  <option value="" selected disabled>Select donation type...</option>
+                  <option value="Money / Financial Fund">Money / Financial Fund (Stadial Relief & Retrofit)</option>
+                  <option value="Things / Relief Supplies">Things / Relief Supplies (Water, Go-Bags, First-Aid)</option>
+                  <option value="Both Money & Things">Both Money & Physical Supplies</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label small fw-bold">Contribution Details / Amount</label>
+                <input type="text" class="form-control" id="donorDetails" placeholder="e.g., 50,000 MMK or 3 Go-Bags" required>
+              </div>
+            </div>
+
+            <div class="form-check mb-4">
+              <input class="form-check-input" type="checkbox" id="donorPledge" required>
+              <label class="form-check-label text-muted small" for="donorPledge">
+                I support proactive earthquake risk reduction <strong>before the next big disaster</strong>.
+              </label>
+            </div>
+
+            <div class="text-center">
+              <button type="submit" class="btn seemore px-5 py-2 rounded-pill fw-bold">
+                <i class="bi bi-award-fill me-2"></i> Submit & Generate Certificate
+              </button>
+            </div>
+          </form>
+
+          <!-- CERTIFICATE GENERATED RESULT CONTAINER -->
+          <div id="generatedCertificateContainer" class="d-none mt-4 p-4 border-3 border-success rounded-4 bg-light text-center">
+            <div class="text-success mb-2 fs-3"><i class="bi bi-patch-check-fill"></i></div>
+            <h4 class="fw-bold text-dark-blue mb-1">Donation Successful!</h4>
+            <p class="text-muted small mb-3">Thank you for your generous support. Here is your official certificate:</p>
+            
+            <div class="card p-4 border-2 border-warning bg-white shadow-sm text-center rounded-3">
+              <img src="../media/logo.png" alt="logo" width="50" height="50" class="img-fluid mb-1">
+              <h5 class="fw-bold text-dark-blue fst-italic">Certificate of Appreciation</h5>
+              <p class="text-muted extra-small mb-2">Proudly presented to</p>
+              <h4 class="fw-bold text-dark border-bottom pb-1 d-inline-block px-3 mb-2" id="certDisplayNicName">Donor Name</h4>
+              <p class="text-muted extra-small mb-3">from <span id="certDisplayPlace">Place</span>, for contributing <span id="certDisplayDetails">Details</span> toward pre-earthquake risk reduction.</p>
+              <div class="d-flex justify-content-between text-muted extra-small border-top pt-2">
+                <span>Date: <span id="certDisplayDate">2026-11-09</span></span>
+                <span class="fw-bold text-dark-blue">Vanguard Project Team</span>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-secondary btn-sm rounded-pill px-4 mt-3" data-bs-dismiss="modal">Close & Finish</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="py-4 text-white mt-5" data-aos="fade">
+    <div class="container">
+      <div class="row mb-4 text-center text-md-start">
+        <div class="col-12">
+          <p class="text-light opacity-75 small">Earthquake Risk Reduction</p>
+        </div>
+      </div>
+
+      <div class="row text-center text-md-start">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <h5 class="fw-bold mb-3 border-bottom border-light pb-2 d-inline-block">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="../index.html" class="text-white text-decoration-none hover-link">Home</a></li>
+            <li class="mb-2"><a href="riskmap.html" class="text-white text-decoration-none hover-link">Risk Map</a></li>
+            <li class="mb-2"><a href="preparedness.html" class="text-white text-decoration-none hover-link">Preparedness</a></li>
+            <li class="mb-2"><a href="quiz.html" class="text-white text-decoration-none hover-link">Quiz</a></li>
+            <li class="mb-2"><a href="action.html" class="text-white text-decoration-none hover-link">Action</a></li>
+            <li class="mb-2"><a href="aboutus.html" class="text-white text-decoration-none hover-link">About Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6">
+          <h5 class="fw-bold mb-3 border-bottom border-light pb-2 d-inline-block">Contact Us</h5>
+          <ul class="list-unstyled text-light">
+            <li class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i>EDUSN Mandalay Campus</li>
+            <li class="mb-2"><i class="bi bi-envelope-fill me-2"></i>vanguardstudents@gmail.com</li>
+            <li class="mb-2"><i class="bi bi-telephone-fill me-2"></i>+95 0717130406</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="my-4 border-light opacity-50">
+
+      <div class="row">
+        <div class="col-12 text-center">
+          <small class="text-light">Copyright &copy; 2026 VANGUARD. All Rights Reserved.</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Handle Donation Form Submit & Display Certificate in Popup
+    function handleDonationSubmit(event) {
+      event.preventDefault();
+      const name = document.getElementById('donorName').value;
+      const place = document.getElementById('donorPlace').value;
+      const method = document.getElementById('donationMethod').value;
+      const details = document.getElementById('donorDetails').value;
+
+      document.getElementById('certDisplayNicName').innerText = name;
+      document.getElementById('certDisplayPlace').innerText = place;
+      document.getElementById('certDisplayDetails').innerText = `${method} (${details})`;
+      
+      const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      document.getElementById('certDisplayDate').innerText = today;
+
+      // Hide form, show success certificate
+      document.getElementById('donationForm').style.display = 'none';
+      document.getElementById('generatedCertificateContainer').classList.remove('d-none');
+    }
+
+    // Handle Volunteer Form Submit
+    function handleVolunteerSubmit(event) {
+      event.preventDefault();
+      document.getElementById('volunteerForm').style.display = 'none';
+      document.getElementById('volSuccessAlert').classList.remove('d-none');
+    }
+
+    // Handle Conference Form Submit
+    function handleConfSubmit(event) {
+      event.preventDefault();
+      document.getElementById('confForm').style.display = 'none';
+      document.getElementById('confSuccessAlert').classList.remove('d-none');
+    }
+
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+  </script>
+</body>
+</html>

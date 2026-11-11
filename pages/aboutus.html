@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EARTHQUAKE RISK REDUCTION</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="shortcut icon" href="../media/logo.png">
+</head>
+<body class="background" data-bs-spy="scroll" data-bs-target="#aboutNavbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top px-2 px-sm-3" id="aboutNavbar" data-aos="fade-down">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+        <img src="../media/logo.png" alt="logo" width="40" height="40" class="img-fluid">
+        <span>VANGUARD</span>
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto flex-column flex-lg-row gap-2 gap-lg-3 fw-medium my-2 my-lg-0">
+          <li class="nav-item"><a class="nav-link text-secondary" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary" href="riskmap.html">Risk Map</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary" href="preparedness.html">Preparedness</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary" href="quiz.html">Quiz</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary" href="action.html">Action</a></li>
+          <li class="nav-item"><a class="nav-link active text-dark-blue fw-bold" href="aboutus.html">About Us</a></li>
+  
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MENU TOGGLE -->
+  <div class="text-center position-relative px-3">
+    
+    <div class="hero-menu-toggle px-2 d-none d-lg-block">
+      <button class="btn rounded-pill px-3 py-2 fw-semibold d-flex align-items-center gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+        <i class="bi bi-list fs-5"></i>
+      </button>
+    </div>
+
+  </div>
+
+
+  <!-- OFFCANVAS MENU -->
+  <div class="offcanvas offcanvas-end shadow" tabindex="-1" id="offcanvasNavbar">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title fw-bold text-dark-blue d-flex align-items-center gap-2">
+        <img src="../media/logo.png" alt="logo" width="35" height="35">
+        VANGUARD Menu
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <li class="nav-item mb-2"><a class="nav-link" href="#hero-about"><i class="bi bi-stars me-2"></i>Magical Command Hub</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#team-section"><i class="bi bi-shield-shaded me-2"></i>Department Command Heads</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#faq"><i class="bi bi-question-circle me-2"></i>Frequently Asked Questions</a></li>
+      </ul>
+      <div class="mt-4 p-3 rounded border shadow-sm">
+        <small class="text-muted d-block mb-1">Year 9 PBL Project</small>
+        <strong class="text-dark">Earthquake Risk Reduction</strong>
+      </div>
+    </div>
+  </div>
+
+  <main class="container py-4 mt-2 mt-md-3">
+
+    <!-- HERO SECTION -->
+    <section class="text-center mb-5" id="hero-about" data-aos="fade-up">
+      <p class="col-lg-8 mx-auto lead fs-6">
+        Welcome to the vanguard tactical control center. Meet our department heads leading search operations, medical triage, fire safety suppression, and emergency dispatch communications.
+      </p>
+    </section>
+
+    <!-- DEPARTMENT HEADS TEAM SECTION -->
+    <section class="mb-5" id="team-section" data-aos="fade-up">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold text-dark-blue fst-italic"><i class="bi bi-people-fill me-2"></i>Department Command Leads</h2>
+        <p class="text-muted">Click our roles on any card to access detailed background information.</p>
+      </div>
+
+      <div class="row g-4">
+        
+        <!-- ZEPHYRO -->
+        <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card h-100 border-0 shadow-sm text-center p-3">
+            <div class="position-relative mx-auto my-3 overflow-hidden rounded-circle border border-3 border-info shadow-sm" style="width: 140px; height: 140px;">
+              <img src="../media/Zephyro.jpg" class="w-100 h-100" style="object-fit: cover;" alt="Zephyro">
+            </div>
+            <div class="card-body p-2 d-flex flex-column">
+              <h5 class="fw-bold text-dark mb-1">Zephyro</h5>
+              <span class="badge bg-info text-white fw-bold mb-3 py-2" data-bs-toggle="modal" data-bs-target="#zephyroModal">Rescuer </span>
+              <p class="text-muted extra-small flex-grow-1">Leads search and rescue operations, navigates hazardous areas, and guides safe evacuations.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SWEETY -->
+        <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card h-100 border-0 shadow-sm text-center p-3">
+            <div class="position-relative mx-auto my-3 overflow-hidden rounded-circle border border-3 border-success shadow-sm" style="width: 140px; height: 140px;">
+              <img src="../media/Sweety.jpg" class="w-100 h-100" style="object-fit: cover;" alt="Sweety">
+            </div>
+            <div class="card-body p-2 d-flex flex-column">
+              <h5 class="fw-bold text-dark mb-1">Sweety</h5>
+              <span class="badge bg-success text-white fw-bold mb-3 py-2" data-bs-target="#sweetyModal" data-bs-toggle="modal">Medic </span>
+              <p class="text-muted extra-small flex-grow-1">Handles emergency first aid, triage, and post-disaster health assistance.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- DORA -->
+        <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+          <div class="card h-100 border-0 shadow-sm text-center p-3">
+            <div class="position-relative mx-auto my-3 overflow-hidden rounded-circle border border-3 border-danger shadow-sm" style="width: 140px; height: 140px;">
+              <img src="../media/Dora.jpg" class="w-100 h-100" style="object-fit: cover;" alt="Dora">
+            </div>
+            <div class="card-body p-2 d-flex flex-column">
+              <h5 class="fw-bold text-dark mb-1">Dora</h5>
+              <span class="badge bg-danger text-white fw-bold mb-3 py-2" data-bs-toggle="modal" data-bs-target="#doraModal">Firefighter</span>
+              <p class="text-muted extra-small flex-grow-1">Manages fire suppression, secondary hazard control, and structural safety management.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PINKY -->
+        <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+          <div class="card h-100 border-0 shadow-sm text-center p-3">
+            <div class="position-relative mx-auto my-3 overflow-hidden rounded-circle border border-3 border-warning shadow-sm" style="width: 140px; height: 140px;">
+              <img src="../media/Pinky.jpg" class="w-100 h-100" style="object-fit: cover;" alt="Pinky">
+            </div>
+            <div class="card-body p-2 d-flex flex-column">
+              <h5 class="fw-bold text-dark mb-1">Pinky</h5>
+              <span class="badge bg-warning text-dark fw-bold mb-3 py-2" data-bs-target="#pinkyModal" data-bs-toggle="modal">Police Dispatcher</span>
+              <p class="text-muted extra-small flex-grow-1">Coordinates emergency communications, manages alerts, and directs team response units.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="mb-5" id="vision-mission" data-aos="fade-up">
+      <div class="row g-4">
+        <div class="col-md-6" data-aos="fade-right">
+          <div class="card p-4 h-100 shadow-sm border-0">
+            <h4 class="fw-bold text-dark-blue fst-italic mb-3"><i class="bi bi-eye-fill me-2"></i>Our Vision</h4>
+            <p class="text-muted small mb-0">
+              To build seismically resilient, highly aware communities across Mandalay and Myanmar where every citizen and schoolchild possesses actionable earthquake survival knowledge, reducing structural risk and saving lives.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-left">
+          <div class="card p-4 h-100 shadow-sm border-0">
+            <h4 class="fw-bold text-dark-blue fst-italic mb-3"><i class="bi bi-bullseye me-2"></i>Our Mission</h4>
+            <ul class="text-muted small ps-3 mb-0">
+              <li class="mb-2">Develop interactive digital risk maps and emergency assembly guides.</li>
+              <li class="mb-2">Educate local neighborhoods and orphanages through community outreach.</li>
+              <li class="mb-2">Empower youth leadership through interdisciplinary STEM and disaster risk reduction projects.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="py-5 border-top border-bottom mb-5" id="faq" data-aos="fade-up">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold text-dark-blue fst-italic">Frequently Asked Questions</h2>
+        <p class="text-muted">Expert answers regarding earthquake preparation, disaster response, and safety protocols.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="accordion shadow-sm" id="faqAccordion">
+            
+            <div class="accordion-item border-0 mb-3 rounded overflow-hidden border">
+              <h2 class="accordion-header">
+                <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne">
+                  <i class="bi bi-shield-exclamation text-primary me-2"></i> What should I do immediately when ground shaking starts?
+                </button>
+              </h2>
+              <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted small">
+                  Execute the <strong>Drop, Cover, and Hold On</strong> protocol immediately. Drop to your hands and knees, crawl under a sturdy table or desk for shelter, and hold onto it until all shaking completely ceases. Avoid running outdoors during active tremors.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border-0 mb-3 rounded overflow-hidden border">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo">
+                  <i class="bi bi-backpack text-primary me-2"></i> How long should an Emergency Go-Bag sustain my household?
+                </button>
+              </h2>
+              <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted small">
+                  Your go-bag should contain at least <strong>72 hours (3 days)</strong> of self-sufficiency supplies, including 1 gallon of drinking water per person daily, non-perishable food items, first-aid supplies, flashlights, and vital personal documents.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border-0 mb-3 rounded overflow-hidden border">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree">
+                  <i class="bi bi-water text-primary me-2"></i> What is soil liquefaction and why is it dangerous?
+                </button>
+              </h2>
+              <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted small">
+                  Soil liquefaction happens when saturated, loose soil temporarily loses its solid strength during heavy ground shaking and behaves like thick quicksand, causing heavy buildings and infrastructure to sink or tip over.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border-0 rounded overflow-hidden border">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour">
+                  <i class="bi bi-telephone-x text-primary me-2"></i> Why should I avoid making standard phone calls after a quake?
+                </button>
+              </h2>
+              <div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted small">
+                  Cellular networks easily get jammed immediately after major earthquakes due to sudden call volume spikes. Use text messaging (SMS) or internet data apps instead to preserve bandwidth for emergency responders.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+
+
+  <!-- TEAM MEMBER MODALS -->
+
+  <!-- ZEPHYRO MODAL -->
+  <div class="modal fade" id="zephyroModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 rounded-4 shadow-lg">
+        <div class="modal-header border-bottom">
+          <h5 class="modal-title fw-bold text-info"><i class="bi bi-shield-fill-check me-2"></i>Zephyro — Head of Search & Rescue</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="text-center mb-3">
+            <img src="../media/Zephyro.jpg" class="rounded-circle border border-3 border-info" width="110" height="110" style="object-fit: cover;" alt="Zephyro">
+            <h5 class="fw-bold mt-2 mb-0">Zephyro</h5>
+            <span class="badge bg-info px-3 py-1 mt-1">Rescuer & Tactical Operations Lead</span>
+          </div>
+          <h6 class="fw-bold text-dark mt-3">Department Responsibilities:</h6>
+          <ul class="text-muted small ps-3">
+            <li class="mb-1">Leads tactical search and rescue operations across damaged structures.</li>
+            <li class="mb-1">Navigates hazardous debris fields and unstable seismic zones.</li>
+            <li class="mb-1">Guides civilian evacuation routes toward safe stadium assembly points.</li>
+          </ul>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary btn-sm rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SWEETY MODAL -->
+  <div class="modal fade" id="sweetyModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 rounded-4 shadow-lg">
+        <div class="modal-header border-bottom">
+          <h5 class="modal-title fw-bold text-success"><i class="bi bi-heart-pulse-fill me-2"></i>Sweety — Head of Medical Dept</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="text-center mb-3">
+            <img src="../media/Sweety.jpg" class="rounded-circle border border-3 border-success" width="110" height="110" style="object-fit: cover;" alt="Sweety">
+            <h5 class="fw-bold mt-2 mb-0">Sweety</h5>
+            <span class="badge bg-success px-3 py-1 mt-1">Medic & Triage Specialist</span>
+          </div>
+          <h6 class="fw-bold text-dark mt-3">Department Responsibilities:</h6>
+          <ul class="text-muted small ps-3">
+            <li class="mb-1">Manages emergency first aid stations and patient triage protocols.</li>
+            <li class="mb-1">Provides critical post-disaster health assistance and injury stabilization.</li>
+            <li class="mb-1">Coordinates medical supply distribution at regional stadium camps.</li>
+          </ul>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary btn-sm rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DORA MODAL -->
+  <div class="modal fade" id="doraModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 rounded-4 shadow-lg">
+        <div class="modal-header border-bottom">
+          <h5 class="modal-title fw-bold text-danger"><i class="bi bi-fire me-2"></i>Dora — Head of Fire Safety</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="text-center mb-3">
+            <img src="../media/Dora.jpg" class="rounded-circle border border-3 border-danger" width="110" height="110" style="object-fit: cover;" alt="Dora">
+            <h5 class="fw-bold mt-2 mb-0">Dora</h5>
+            <span class="badge bg-danger px-3 py-1 mt-1">Firefighter & Structural Hazard Lead</span>
+          </div>
+          <h6 class="fw-bold text-dark mt-3">Department Responsibilities:</h6>
+          <ul class="text-muted small ps-3">
+            <li class="mb-1">Manages emergency fire suppression caused by ruptured gas lines.</li>
+            <li class="mb-1">Controls secondary seismic hazards like electrical shorts and chemical spills.</li>
+            <li class="mb-1">Conducts structural safety assessments on damaged urban buildings.</li>
+          </ul>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary btn-sm rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PINKY MODAL -->
+  <div class="modal fade" id="pinkyModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 rounded-4 shadow-lg">
+        <div class="modal-header border-bottom">
+          <h5 class="modal-title fw-bold text-warning text-dark"><i class="bi bi-broadcast me-2"></i>Pinky — Head of Comms</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="text-center mb-3">
+            <img src="../media/Pinky.jpg" class="rounded-circle border border-3 border-warning" width="110" height="110" style="object-fit: cover;" alt="Pinky">
+            <h5 class="fw-bold mt-2 mb-0">Pinky</h5>
+            <span class="badge bg-warning text-dark px-3 py-1 mt-1">Police Dispatcher & Communications Lead</span>
+          </div>
+          <h6 class="fw-bold text-dark mt-3">Department Responsibilities:</h6>
+          <ul class="text-muted small ps-3">
+            <li class="mb-1">Coordinates emergency communications and public safety broadcasts.</li>
+            <li class="mb-1">Manages live hazard alerts and emergency warning feeds.</li>
+            <li class="mb-1">Directs tactical response units and field dispatch communications.</li>
+          </ul>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary btn-sm rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="py-4 text-white mt-5" data-aos="fade">
+    <div class="container">
+      <div class="row mb-4 text-center text-md-start">
+        <div class="col-12">
+          <p class="text-light opacity-75 small">Earthquake Risk Reduction</p>
+        </div>
+      </div>
+
+      <div class="row text-center text-md-start">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <h5 class="fw-bold mb-3 border-bottom border-light pb-2 d-inline-block">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="../index.html" class="text-white text-decoration-none hover-link">Home</a></li>
+            <li class="mb-2"><a href="riskmap.html" class="text-white text-decoration-none hover-link">Risk Map</a></li>
+            <li class="mb-2"><a href="preparedness.html" class="text-white text-decoration-none hover-link">Preparedness</a></li>
+            <li class="mb-2"><a href="quiz.html" class="text-white text-decoration-none hover-link">Quiz</a></li>
+            <li class="mb-2"><a href="action.html" class="text-white text-decoration-none hover-link">Action</a></li>
+            <li class="mb-2"><a href="aboutus.html" class="text-white text-decoration-none hover-link">About Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6">
+          <h5 class="fw-bold mb-3 border-bottom border-light pb-2 d-inline-block">Contact Us</h5>
+          <ul class="list-unstyled text-light">
+            <li class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i>EDUSN Mandalay Campus</li>
+            <li class="mb-2"><i class="bi bi-envelope-fill me-2"></i>vanguardstudents@gmail.com</li>
+            <li class="mb-2"><i class="bi bi-telephone-fill me-2"></i>+95 0717130406</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="my-4 border-light opacity-50">
+
+      <div class="row">
+        <div class="col-12 text-center">
+          <small class="text-light">Copyright &copy; 2026 VANGUARD. All Rights Reserved.</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+  </script>
+</body>
+</html>

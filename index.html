@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VANGUARD</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="media/logo.png">
+</head>
+<body class="background">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top px-2 px-sm-3" data-aos="fade-down" data-aos-duration="600">
+    <div class="container-fluid">
+
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="media/logo.png" alt="logo" width="40" height="40" class="img-fluid">
+        <span>VANGUARD</span>
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto flex-column flex-lg-row gap-2 gap-lg-3 fw-medium my-2 my-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-dark-blue fw-bold" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="pages/riskmap.html">Risk Map</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="pages/preparedness.html">Preparedness</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="pages/quiz.html">Quiz</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="pages/action.html">Action</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="pages/aboutus.html">About Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero-section text-center position-relative px-3" data-aos="fade">
+    
+    <div class="hero-menu-toggle px-2 d-none d-lg-block">
+      <button class="btn rounded-pill px-3 py-2 fw-semibold d-flex align-items-center gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+        <i class="bi bi-list fs-5"></i>
+      </button>
+    </div>
+
+    <div class="container position-relative">
+      <div class="mb-3" data-aos="zoom-in" data-aos-delay="200">
+        <h1 class="display-4 fw-bold text-light fst-italic">Earthquake Risk Reduction</h1>
+      </div>
+    
+      <div class="row align-items-center justify-content-between g-3 mt-3">
+        <div class="col-12 col-md-3 col-lg-2 text-md-start d-none d-md-block" data-aos="fade-right" data-aos-delay="400">
+          <a href="#before" class="btn btn-dark-blue side-btn px-4 py-2 w-100">Before</a>
+        </div>
+        <div class="col-12 col-md-3 col-lg-2 text-md-end d-none d-md-block" data-aos="fade-left" data-aos-delay="400">
+          <a href="#after" class="btn btn-dark-blue side-btn px-4 py-2 w-100">After</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <div class="offcanvas offcanvas-end shadow" tabindex="-1" id="offcanvasNavbar">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title fw-bold text-dark-blue d-flex align-items-center gap-2">
+        <img src="media/logo.png" alt="logo" width="35" height="35">
+        VANGUARD Menu
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <li class="nav-item mb-2"><a class="nav-link active fw-bold text-dark-blue" href="index.html"><i class="bi bi-house-door me-2"></i>Home</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#about-earthquake"><i class="bi bi-info-circle me-2"></i>About Earthquakes</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#beforeafter"><i class="bi bi-sliders me-2"></i>Before and After Earthquake</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#states"><i class="bi bi-building-check me-2"></i>Community Preparedness Impact</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#stats"><i class="bi bi-bar-chart me-2"></i>Risk Reduction</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#video"><i class="bi bi-play-btn me-2"></i>Visualizing Seismic Forces</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#science"><i class="bi bi-journal-text me-2"></i>How Earthquakes Happen</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#hazards"><i class="bi bi-exclamation-triangle me-2"></i>Secondary Seismic Hazards</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#prepare"><i class="bi bi-check2-square me-2"></i>Immediate Survival Protocol</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#knowledge"><i class="bi bi-backpack me-2"></i>Earthquake General Knowledge</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#retrofitting"><i class="bi bi-building me-2"></i>Structural Safety & Retrofitting</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#quiz"><i class="bi bi-patch-question me-2"></i>Test Your Knowledge</a></li>
+      </ul>
+      <div class="mt-4 p-3 rounded border shadow-sm">
+        <small class="text-muted d-block mb-1">Year 9 PBL Project</small>
+        <strong class="text-dark">Earthquake Risk Reduction</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT EARTHQUAKE -->
+  <section id="about-earthquake" class="py-5 border-bottom">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="fw-bold text-dark-blue fst-italic">About Earthquakes</h2>
+        <p class="text-muted">Understanding seismic events and ground vibrations</p>
+      </div>
+      <div class="row g-4 align-items-center">
+        <div class="col-md-6" data-aos="fade-right">
+          <div class="card p-4 h-100 shadow-sm border-0">
+            <h5 class="fw-bold text-dark-blue mb-3">What is an Earthquake?</h5>
+            <p class="text-muted small mb-3">
+              An earthquake is the sudden, rapid shaking of the Earth's surface caused by the sudden release of energy stored in the Earth's crust. This energy builds up over long periods due to the motion of giant tectonic plates moving against each other.
+            </p>
+            <p class="text-muted small mb-0">
+              When the stress exceeds the strength of the rocks, a sudden fracture occurs along a fault line, radiating shockwaves outward in all directions through the ground.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-left">
+          <div class="p-4 text-center rounded border shadow-sm">
+            <img src="media/eq.jpg" class="img-fluid rounded mb-2 style-img-max" style="max-height: 220px; object-fit: cover;" alt="Earthquake illustration">
+            <p class="small text-muted mb-0">Earth's tectonic plates continually shift and interact <i class="bi bi-activity text-dark-blue ms-1"></i></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-3">
+      <h2 class="fw-bold text-dark-blue fst-italic text-center mt-5 mb-5" data-aos="fade-up">More About Earthquakes</h2>
+      <div class="row justify-content-center" data-aos="zoom-in">
+        <div class="col-lg-9">
+          <div class="ratio ratio-16x9 rounded overflow-hidden shadow">
+            <video src="media/about earthquakes.mp4" controls muted class="w-100 h-100"></video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before After -->
+  <section id="beforeafter" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="fw-bold text-dark-blue fst-italic">Before and After Earthquake</h2>
+        <p class="text-muted">Learn how the ground behaves before an earthquake and discover the common effects after it stops.</p>
+      </div>
+
+      <div class="row g-4" id="before">
+        <div class="col-md-6" data-aos="fade-right">
+          <div class="card p-4 h-100 shadow-sm">
+            <h5 class="fw-bold text-dark-blue mb-3"><i class="bi bi-arrow-left-circle me-2"></i>Before Earthquake</h5>
+            <ul class="text-muted small ps-3 mb-0">
+              <li class="mb-3">Strain builds up deep underground along tectonic plates over many years without anyone noticing.</li>
+              <li class="mb-3">The ground remains completely quiet and calm right before the sudden release of energy occurs.</li>
+              <li class="mb-3">Heavy furniture and glass items sit unsecured inside homes and create dangerous hazards if shaking starts.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6" id="after" data-aos="fade-left">
+          <div class="card p-4 h-100 shadow-sm">
+            <h5 class="fw-bold text-dark-blue mb-3">After Earthquake<i class="bi bi-arrow-right-circle ms-2"></i></h5>
+            <ul class="text-muted small ps-3 mb-0">
+              <li class="mb-3">Buildings, roads, and bridges can get badly damaged or crack open after the strong shaking stops.</li>
+              <li class="mb-3">Power lines and water pipes often break, which can cause sudden fires or clean water shortages.</li>
+              <li class="mb-3">Smaller earthquakes called aftershocks keep happening for days while rescue workers help injured people.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TWO BUILDINGS -->
+  <section id="states" class="py-5 border-bottom">
+    <div class="container">
+      <div class="text-center mb-4" data-aos="fade-up">
+        <h2 class="fw-bold text-dark-blue fst-italic">Community Preparedness Impact</h2>
+        <p class="text-muted">Compare how being ready keeps people safe</p>
+      </div>
+
+      <div class="d-flex justify-content-center mb-4" data-aos="zoom-in">
+        <ul class="nav nav-pills p-1 rounded-pill border flex-column flex-sm-row" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active rounded-pill fw-bold w-100" id="before-tab" data-bs-toggle="pill" data-bs-target="#tab-before" type="button" role="tab">
+              <i class="bi bi-x-circle me-1 text-danger"></i> Unprepared State
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link rounded-pill fw-bold w-100" id="after-tab" data-bs-toggle="pill" data-bs-target="#tab-after" type="button" role="tab">
+              <i class="bi bi-check-circle me-1 text-success"></i> Resilient State
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tab-content col-lg-10 mx-auto" data-aos="fade-up">
+        <div class="tab-pane fade show active" id="tab-before" role="tabpanel">
+          <div class="card p-4 border-danger border-opacity-20 shadow-sm">
+            <div class="row align-items-center g-4">
+              <div class="col-md-6">
+                <h5 class="fw-bold text-danger"><i class="bi bi-exclamation-octagon me-2"></i>High Structural Risk</h5>
+                <ul class="text-muted small ps-3 mb-0">
+                  <li class="mb-2">Old brick buildings fall down easily when shaking starts.</li>
+                  <li class="mb-2">Heavy furniture falls over and hurts people.</li>
+                  <li class="mb-2">Running out of drinking water very quickly.</li>
+                  <li class="mb-2">Broken gas pipes start big city fires.</li>
+                  <li class="mb-2">Electricity cut-off, lost phone connection, wifi bad.</li>
+                </ul>
+              </div>
+              <div class="col-md-6 text-center">
+                <div class="p-4 rounded border">
+                  <img src="media/collapse.jpg" class="img-fluid rounded" style="max-height: 200px; width: 100%; object-fit: cover;" alt="Collapse">
+                  <p class="small text-muted mt-2 mb-0">Unprepared Urban Infrastructure <i class="bi bi-building-x fs-4 text-danger"></i></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="tab-after" role="tabpanel">
+          <div class="card p-4 border-success border-opacity-20 shadow-sm">
+            <div class="row align-items-center g-4">
+              <div class="col-md-6">
+                <h5 class="fw-bold text-success"><i class="bi bi-shield-check me-2"></i>Mitigated Seismic Risk</h5>
+                <ul class="text-muted small ps-3 mb-0">
+                  <li class="mb-2">Strong buildings that stop the ground shaking from hurting them.</li>
+                  <li class="mb-2">Gas pipes that turn off by themselves so they don't leak.</li>
+                  <li class="mb-2">Families having a backpack with 3 days of food and water.</li>
+                  <li class="mb-2">Knowing right away to get under a table and hold on.</li>
+                  <li class="mb-2">Backup power systems emergency mesh networks, community communication protocols.</li>
+                </ul>
+              </div>
+              <div class="col-md-6 text-center">
+                <div class="p-4 rounded border">
+                  <img src="media/strong.jpg" class="img-fluid rounded" style="max-height: 200px; width: 100%; object-fit: cover;" alt="Strong Structure">
+                  <p class="small text-muted mt-2 mb-0">Seismically Retrofitted Architecture <i class="bi bi-building-check fs-4 text-success"></i></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRESS BARS -->
+  <section id="stats" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="fw-bold text-dark-blue fst-italic">Risk Reduction</h2>
+        <p class="text-muted">Simple numbers that show earthquake dangers and how being ready saves lives.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+          <div class="card p-4 h-100 shadow-sm">
+            <div class="fs-3 text-dark-blue mb-2"><i class="bi bi-globe-americas"></i></div>
+            <h6 class="fw-bold mb-1">Earthquake Danger Zones</h6>
+            <p class="text-muted small">Most major earthquakes happen where giant tectonic plates crash into each other.</p>
+            <div class="mt-auto">
+              <div class="d-flex justify-content-between small fw-bold mb-1">
+                <span>Concentration</span>
+                <span class="text-dark-blue">80%</span>
+              </div>
+              <div class="progress"><div class="progress-bar bg-dark-blue" style="width: 80%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+          <div class="card p-4 h-100 shadow-sm">
+            <div class="fs-3 text-danger mb-2"><i class="bi bi-building-fill-x"></i></div>
+            <h6 class="fw-bold mb-1">Building Collapse Danger</h6>
+            <p class="text-muted small">Most people get hurt during earthquakes because weak buildings crumble and fall.</p>
+            <div class="mt-auto">
+              <div class="d-flex justify-content-between small fw-bold mb-1">
+                <span>Collapse Risk</span>
+                <span class="text-danger">75%</span>
+              </div>
+              <div class="progress"><div class="progress-bar bg-danger" style="width: 75%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+          <div class="card p-4 h-100 shadow-sm">
+            <div class="fs-3 text-warning mb-2"><i class="bi bi-bag-check"></i></div>
+            <h6 class="fw-bold mb-1">Household Supplies</h6>
+            <p class="text-muted small">Only a small number of families have an emergency backpack packed and ready.</p>
+            <div class="mt-auto">
+              <div class="d-flex justify-content-between small fw-bold mb-1">
+                <span>Prepared Households</span>
+                <span class="text-warning">30%</span>
+              </div>
+              <div class="progress"><div class="progress-bar bg-warning" style="width: 30%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+          <div class="card p-4 h-100 shadow-sm">
+            <div class="fs-3 text-success mb-2"><i class="bi bi-cash-coin"></i></div>
+            <h6 class="fw-bold mb-1">Saving Lives Goal</h6>
+            <p class="text-muted small">Making buildings stronger and teaching safety rules can save almost everyone.</p>
+            <div class="mt-auto">
+              <div class="d-flex justify-content-between small fw-bold mb-1">
+                <span>Lives Saved</span>
+                <span class="text-success">90%</span>
+              </div>
+              <div class="progress"><div class="progress-bar bg-success" style="width: 90%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5 mb-5" data-aos="zoom-in">
+      <a href="pages/riskmap.html" class="btn seemore px-4 py-2 rounded-pill fw-bold">
+        See More <i class="bi bi-arrow-right ms-1"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section id="video" class="py-5 border-top border-bottom">
+    <div class="container">
+      <div class="text-center mb-4" data-aos="fade-up">
+        <h2 class="fw-bold text-dark-blue fst-italic">Visualizing Seismic Forces</h2>
+        <p class="text-muted">Watch how underground pressure makes the ground shake.</p>
+      </div>
+
+      <div class="row justify-content-center" data-aos="zoom-in">
+        <div class="col-lg-9">
+          <div class="ratio ratio-16x9 rounded overflow-hidden shadow">
+            <video src="media/seismic forces.mp4" controls muted class="w-100 h-100"></video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCIENCE -->
+  <section id="science" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="fw-bold text-dark-blue fst-italic">How Earthquakes Happen</h2>
+        <p class="text-muted">Study about the ground movement and causes</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8" data-aos="fade-up">
+          <div class="accordion shadow-sm" id="scienceAccordion">
+            <div class="accordion-item border-0 mb-3 rounded overflow-hidden border">
+              <h2 class="accordion-header">
+                <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                  <i class="bi bi-globe-americas text-dark-blue me-2"></i> 1. Tectonic Plate Interactions
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#scienceAccordion">
+                <div class="accordion-body text-muted small">
+                  The Earth's outer shell is divided into giant rock plates that constantly and slowly rub against one another. Driven by heat from deep within the planet, these massive slabs catch on their rough edges until the built-up pressure forces them to suddenly slip.
+                  <div class="mt-3">
+                    <a href="pages/riskmap.html" class="btn btn-dark-blue btn-sm fw-bold">See More <i class="bi bi-arrow-right ms-1"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border-0 mb-3 rounded overflow-hidden border">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                  <i class="bi bi-soundwave text-dark-blue me-2"></i> 2. Energy Release & Seismic Waves
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#scienceAccordion">
+                <div class="accordion-body text-muted small">
+                  Deep underground, rocks endure intense pressure that slowly builds up over time. When the rock can no longer handle the stress, it snaps and breaks. This sudden release of energy sends fast-moving waves racing upward toward the surface, creating the ground shaking we experience.
+                  <div class="mt-3">
+                    <a href="pages/riskmap.html" class="btn btn-dark-blue btn-sm fw-bold">See More <i class="bi bi-arrow-right ms-1"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border-0 mb-3 rounded overflow-hidden border">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                  <i class="bi bi-arrows-collapse text-dark-blue me-2"></i> 3. The 3 Primary Geological Fault Types
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#scienceAccordion">
+                <div class="accordion-body text-muted small">
+                  <ul>
+                    <li><strong>Strike-Slip Fault:</strong> Two large pieces of land slide past each other horizontally side by side.</li>
+                    <li><strong>Normal Fault:</strong> The ground stretches apart from tension and causes one side of the rock to drop lower.</li>
+                    <li><strong>Reverse Fault:</strong> Two pieces of ground push together until one piece gets pushed up higher than the other.</li>
+                  </ul>
+                  <div class="mt-3">
+                    <a href="pages/riskmap.html" class="btn btn-dark-blue btn-sm fw-bold">See More <i class="bi bi-arrow-right ms-1"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border-0 rounded overflow-hidden border">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                  <i class="bi bi-graph-up-arrow text-dark-blue me-2"></i> 4. Magnitude vs. Mercalli Intensity
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#scienceAccordion">
+                <div class="accordion-body text-muted small">
+                  <strong>Moment Magnitude (M):</strong> A scale used by scientists to measure the total amount of power released deep underground.<br>
+                  <strong>Modified Mercalli Intensity (MMI):</strong> A measurement of how much shaking people actually feel and how much damage happens on the surface.
+                  <div class="mt-3">
+                    <a href="pages/riskmap.html" class="btn btn-dark-blue btn-sm fw-bold">See More <i class="bi bi-arrow-right ms-1"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HAZARDS -->
+  <section id="hazards" class="py-5 border-top border-bottom">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="fw-bold text-dark-blue fst-italic">Secondary Seismic Hazards</h2>
+        <p class="text-muted">Other dangerous problems that are caused right after the ground stops shaking.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-3" data-aos="flip-left" data-aos-delay="100">
+          <div class="card p-4 h-100 text-center shadow-sm">
+            <div class="d-flex justify-content-center align-items-center">
+              <img src="media/soil.jpg" class="img-fluid rounded" style="max-height: 180px; object-fit: cover;" alt="Soil Liquefaction">
+            </div>
+            <h6 class="fw-bold mt-3">Soil Liquefaction <i class="text-dark-blue ms-2 bi bi-water"></i></h6>
+            <p class="text-muted small mb-0">Wet ground acts like quicksand during shaking and causes buildings to sink or tip over.</p>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3" data-aos="flip-left" data-aos-delay="200">
+          <div class="card p-4 h-100 text-center shadow-sm">
+            <div class="d-flex justify-content-center align-items-center">
+              <img src="media/tsunami.jpg" class="img-fluid rounded" style="max-height: 180px; object-fit: cover;" alt="Tsunami">
+            </div>
+            <h6 class="fw-bold mt-3">Tsunamis <i class="text-info bi bi-tsunami ms-2"></i></h6>
+            <p class="text-muted small mb-0">Earthquakes under the ocean push water up and create giant tsunami waves that flood the coast.</p>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3" data-aos="flip-left" data-aos-delay="300">
+          <div class="card p-4 h-100 text-center shadow-sm">
+            <div class="d-flex justify-content-center align-items-center">
+              <img src="media/landslide.jpg" class="img-fluid rounded" style="max-height: 180px; object-fit: cover;" alt="Landslide">
+            </div>
+            <h6 class="fw-bold mt-3">Seismic Landslides <i class="bi bi-layer-backward text-warning ms-2"></i></h6>
+            <p class="text-muted small mb-0">Violent shaking makes rocks and soil slide rapidly down hills and mountains into towns below.</p>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3" data-aos="flip-left" data-aos-delay="400">
+          <div class="card p-4 h-100 text-center shadow-sm">
+            <div class="d-flex justify-content-center align-items-center">
+              <img src="media/gaslinefire.jpg" class="img-fluid rounded" style="max-height: 180px; object-fit: cover;" alt="Gas Line Fire">
+            </div>
+            <h6 class="fw-bold mt-3">Gas Line Fires <i class="bi bi-fire text-danger ms-2"></i></h6>
+            <p class="text-muted small mb-0">Broken gas pipes and fallen power lines cause dangerous fires while broken water pipes make fighting them hard.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTION -->
+  <section id="prepare" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="fw-bold text-dark-blue fst-italic">Immediate Survival Protocol</h2>
+        <p class="text-muted">Follow these three main safety actions immediately as soon as you feel the ground start to shake.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card p-4 h-100 text-center shadow-sm">
+            <div class="display-5 text-dark-blue mb-3">
+              <i class="bi bi-arrow-down-circle"></i> 
+            </div>
+            <h5 class="fw-bold">1. DROP</h5>
+            <p class="text-muted small mb-0">Drop down onto your hands and knees immediately to prevent being knocked over by ground motion.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card p-4 h-100 text-center shadow-sm">
+            <div class="display-5 text-dark-blue mb-3">
+              <i class="bi bi-shield-fill"></i> 
+            </div>
+            <h5 class="fw-bold">2. COVER</h5>
+            <p class="text-muted small mb-0">Cover your head and neck under a sturdy table or desk. Crawl away from windows and glass fixtures.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+          <div class="card p-4 h-100 text-center shadow-sm">
+            <div class="display-5 text-dark-blue mb-3">
+              <i class="bi bi-hand-index-thumb"></i>
+            </div>
+            <h5 class="fw-bold">3. HOLD</h5>
+            <p class="text-muted small mb-0">Hold securely onto your shelter and move with it if it shifts until shaking completely stops.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5 mb-5" data-aos="zoom-in">
+        <a href="pages/preparedness.html" class="btn seemore px-4 py-2 rounded-pill fw-bold">
+          See More <i class="bi bi-arrow-right ms-1"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHECKLIST -->
+  <section id="knowledge" class="py-5 border-top border-bottom">
+    <div class="container">
+      <div class="text-center mb-4" data-aos="fade-up">
+        <h2 class="fw-bold text-dark-blue fst-italic">Earthquake General Knowledge</h2>
+        <p class="text-muted">Check off the true earthquake facts you already know to track your awareness level.</p>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8" data-aos="fade-up">
+          <div class="card p-4 shadow-sm">
+            <div class="mb-4">
+              <div class="d-flex justify-content-between small fw-bold mb-1">
+                <span>Knowledge Awareness Level</span><span id="eqPercent" class="text-dark-blue">0%</span>
+              </div>
+              <div class="progress"><div id="eqProgressBar" class="progress-bar bg-dark-blue" style="width: 0%"></div></div>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input eq-check" type="checkbox" id="fact1" onclick="earthquake()">
+              <label class="form-check-label text-muted small" for="fact1"><strong>Drop, Cover, and Hold On:</strong> If an earthquake happens, get under a sturdy table, cover your head, and hold on until shaking stops.</label>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input eq-check" type="checkbox" id="fact2" onclick="earthquake()">
+              <label class="form-check-label text-muted small" for="fact2"><strong>Stay Away from Glass:</strong> Windows, mirrors, and hanging glass fixtures can shatter violently during strong shaking.</label>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input eq-check" type="checkbox" id="fact3" onclick="earthquake()">
+              <label class="form-check-label text-muted small" for="fact3"><strong>Beware of Aftershocks:</strong> Smaller earthquakes can continue to happen for hours, days, or even weeks after the main quake.</label>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input eq-check" type="checkbox" id="fact4" onclick="earthquake()">
+              <label class="form-check-label text-muted small" for="fact4"><strong>Outdoor Safety:</strong> If you are outdoors, move to an open area away from buildings, trees, streetlights, and power lines.</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input eq-check" type="checkbox" id="fact5" onclick="earthquake()">
+              <label class="form-check-label text-muted small" for="fact5"><strong>Avoid Doorways:</strong> Doorways are not stronger than any other part of modern houses; getting under a table is much safer.</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RETROFITTING -->
+  <section id="retrofitting" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="fw-bold text-dark-blue fst-italic">Structural Safety & Retrofitting</h2>
+        <p class="text-muted">Smart ways to upgrade buildings and homes so they stay strong and safe during earthquakes.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6" data-aos="fade-right">
+          <div class="card p-4 h-100 shadow-sm">
+            <h5 class="fw-bold text-dark-blue mb-3"><i class="bi bi-building me-2"></i>Engineering Retrofits</h5>
+            <ul class="text-muted small ps-3 mb-0">
+              <li class="mb-3"><strong>Base Isolators:</strong> Putting special rubber pads under the building to soak up the shaking.</li>
+              <li class="mb-3"><strong>Steel Cross-Bracing:</strong> Using crossed steel beams to keep walls from swaying too much.</li>
+              <li class="mb-3"><strong>Shear Walls:</strong> Building thick concrete walls to help spread out the shaking force.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-left">
+          <div class="card p-4 h-100 shadow-sm">
+            <h5 class="fw-bold text-dark-blue mb-3"><i class="bi bi-house-gear me-2"></i>Home Safety Protection</h5>
+            <ul class="text-muted small ps-3 mb-0">
+              <li class="mb-3"><strong>Furniture Anchoring:</strong> Tying tall bookshelves and heavy TVs securely to the wall so they won't fall over.</li>
+              <li class="mb-3"><strong>Flexible Gas Pipes:</strong> Using bendable metal gas pipes so they won't snap and leak gas.</li>
+              <li class="mb-3"><strong>Cabinet Safety Latches:</strong> Putting locks on kitchen cupboards to keep plates and cups from falling out.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz" class="py-5 border-top border-bottom">
+    <div class="container">
+      <div class="text-center mb-4" data-aos="zoom-in">
+        <h2 class="fw-bold text-dark-blue fst-italic">Test Your Knowledge</h2>
+        <p class="text-muted">Quick self-test on earthquake survival procedures.</p>
+        <div class="mt-3">
+          <a href="pages/quiz.html" class="btn btn-dark-blue btn-sm fw-bold">Take the Quiz <i class="bi bi-arrow-right ms-1"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-4 text-white" data-aos="fade">
+    <div class="container">
+      <div class="row mb-4 text-center text-md-start">
+        <div class="col-12">
+          <p class="text-light opacity-75 small">Earthquake Risk Reduction</p>
+        </div>
+      </div>
+
+      <div class="row text-center text-md-start">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <h5 class="fw-bold mb-3 border-bottom border-light pb-2 d-inline-block">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="index.html" class="text-white text-decoration-none hover-link">Home</a></li>
+            <li class="mb-2"><a href="pages/riskmap.html" class="text-white text-decoration-none hover-link">Risk Map</a></li>
+            <li class="mb-2"><a href="pages/preparedness.html" class="text-white text-decoration-none hover-link">Preparedness</a></li>
+            <li class="mb-2"><a href="pages/quiz.html" class="text-white text-decoration-none hover-link">Quiz</a></li>
+            <li class="mb-2"><a href="pages/action.html" class="text-white text-decoration-none hover-link">Action</a></li>
+            <li class="mb-2"><a href="pages/aboutus.html" class="text-white text-decoration-none hover-link">About Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6">
+          <h5 class="fw-bold mb-3 border-bottom border-light pb-2 d-inline-block">Contact Us</h5>
+          <ul class="list-unstyled text-light">
+            <li class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i>EDUSN Mandalay Campus</li>
+            <li class="mb-2"><i class="bi bi-envelope-fill me-2"></i>vanguardstudents@gmail.com</li>
+            <li class="mb-2"><i class="bi bi-telephone-fill me-2"></i>+95 0717130406</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="my-4 border-light opacity-50">
+
+      <div class="row">
+        <div class="col-12 text-center">
+          <small class="text-light">Copyright &copy; 2026 VANGUARD. All Rights Reserved.</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function earthquake() {
+      const checkboxes = document.querySelectorAll('.eq-check');
+      let checkedCount = 0;
+      checkboxes.forEach(cb => { if (cb.checked) checkedCount++; });
+      
+      const percentage = Math.round((checkedCount / checkboxes.length) * 100);
+      const progressBar = document.getElementById('eqProgressBar');
+      const percentText = document.getElementById('eqPercent');
+      
+      progressBar.style.width = percentage + '%';
+      percentText.innerText = percentage + '%';
+    }
+
+    // AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+  </script>
+</body>
+</html>

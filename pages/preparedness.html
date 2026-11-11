@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VANGUARD </title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="shortcut icon" href="../media/logo.png">
+</head>
+<body class="background" data-bs-spy="scroll" data-bs-target="#prepNavbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top px-2 px-sm-3" id="prepNavbar" data-aos="fade-down">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+        <img src="../media/logo.png" alt="logo" width="40" height="40" class="img-fluid">
+        <span>VANGUARD</span>
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto flex-column flex-lg-row gap-2 gap-lg-3 fw-medium my-2 my-lg-0">
+          <li class="nav-item"><a class="nav-link text-secondary" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary" href="riskmap.html">Risk Map</a></li>
+          <li class="nav-item"><a class="nav-link active text-dark-blue fw-bold" href="preparedness.html">Preparedness</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary" href="quiz.html">Quiz</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary" href="action.html">Action</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary" href="aboutus.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MENU TOGGLE -->
+  <div class="text-center position-relative px-3">
+    <div class="hero-menu-toggle px-2 d-none d-lg-block">
+      <button class="btn rounded-pill px-3 py-2 fw-semibold d-flex align-items-center gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+        <i class="bi bi-list fs-5"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- OFFCANVAS MENU -->
+  <div class="offcanvas offcanvas-end shadow" tabindex="-1" id="offcanvasNavbar">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title fw-bold text-dark-blue d-flex align-items-center gap-2">
+        <img src="../media/logo.png" alt="logo" width="35" height="35">
+        VANGUARD Menu
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <li class="nav-item mb-2"><a class="nav-link" href="#carousel-section"><i class="bi bi-images me-2"></i>Preparedness Overview</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#survival-protocols"><i class="bi bi-shield-fill-check me-2"></i>Emergency Survival Protocols</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#items"><i class="bi bi-shield-fill-check me-2"></i>Extended Emergency Go-Bag Guide</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#gobag-section"><i class="bi bi-backpack me-2"></i>Emergency Go-Bag Checklist</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#age-prep"><i class="bi bi-people me-2"></i>Preparedness by Age Groups</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#place-prep"><i class="bi bi-buildings me-2"></i>Preparedness by Public & Work Places</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#community"><i class="bi bi-map me-2"></i>Community Support & Recovery Planning</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="riskmap.html"><i class="bi bi-geo-alt me-2"></i>Risk Map & Damage Level Data</a></li>
+      </ul>
+      <div class="mt-4 p-3 rounded border shadow-sm">
+        <small class="text-muted d-block mb-1">Year 9 PBL Project</small>
+        <strong class="text-dark">Earthquake Risk Reduction</strong>
+      </div>
+    </div>
+  </div>
+
+  <main class="container py-4 mt-2 mt-md-4">
+
+    <!-- TITLE -->
+    <div class="text-center mb-4" data-aos="fade-up">
+      <h2 class="display-5 fw-bold text-dark-blue fst-italic">Disaster Preparedness & Survival</h2>
+      <p class="text-muted mt-2">Actionable safety guidelines, go-bag essentials, and emergency protocols</p>
+    </div>
+
+    <!-- CAROUSEL -->
+    <section class="mb-5" id="carousel-section" data-aos="zoom-in">
+      <div id="prepCarousel" class="carousel slide shadow rounded overflow-hidden" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#prepCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#prepCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#prepCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner" style="max-height: 400px;">
+          <div class="carousel-item active">
+            <img src="../media/room.jpg" class="d-block w-100" style="object-fit: cover; height: 400px;" alt="Secure Living Space">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+              <h5 class="fw-bold text-white">1. Secure Your Living Space</h5>
+              <p class="small text-light">Anchor heavy shelves, cabinets, and electronics to prevent tipping during seismic tremors.</p>
+            </div> 
+          </div>
+          <div class="carousel-item">
+            <img src="../media/dch.jpg" class="d-block w-100" style="object-fit: cover; height: 400px;" alt="Drop Cover Hold">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+              <h5 class="fw-bold text-white">2. Drop, Cover, and Hold On</h5>
+              <p class="small text-light">Instantly drop under sturdy furniture and hold secure until all ground vibration ceases.</p>
+            </div> 
+          </div>
+          <div class="carousel-item">
+            <img src="../media/kit.jpg" class="d-block w-100" style="object-fit: cover; height: 400px;" alt="Go-Bag">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+              <h5 class="fw-bold text-white">3. Pack an Emergency Go-Bag</h5>
+              <p class="small text-light">Maintain 3 days of potable water, non-perishable food, first aid supplies, and flashlights.</p>
+            </div> 
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#prepCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#prepCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- SURVIVAL PROTOCOLS -->
+    <section class="mb-5" id="survival-protocols" data-aos="fade-up">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold text-dark-blue fst-italic">Emergency Survival Protocols</h2>
+        <p class="text-muted">Step-by-step instructions for indoor, outdoor, and post-quake scenarios</p>
+      </div>
+
+      <div class="row g-4 align-items-start">
+        
+        <!-- INDOOR PROTOCOL -->
+        <div class="col-md-4" data-aos="fade-right" data-aos-delay="100">
+          <div class="card p-4 shadow-sm border-0 h-100">
+            <h5 class="fw-bold text-dark-blue mb-3"><i class="bi bi-house-door me-2"></i>Indoor Protocol</h5>
+            <p class="text-muted small">Stay inside. Move away from glass, windows, and exterior walls. Get under a desk or sturdy table.</p>
+            <div class="mt-auto">
+              <button class="btn btn-blue btn-sm w-100 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIndoor">
+                View Details <i class="bi bi-chevron-down ms-1"></i>
+              </button>
+              <div class="collapse mt-2" id="collapseIndoor">
+                <div class="card card-body bg-light text-muted small p-2 border-0">
+                  If no table is nearby, drop down against an interior wall and cover your head and neck with your arms.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- OUTDOOR PROTOCOL -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="card p-4 shadow-sm border-0 h-100">
+            <h5 class="fw-bold text-dark-blue mb-3"><i class="bi bi-tree me-2"></i>Outdoor Protocol</h5>
+            <p class="text-muted small">Move away from buildings, streetlights, utility wires, and overpasses immediately.</p>
+            <div class="mt-auto">
+              <button class="btn btn-blue btn-sm w-100 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOutdoor">
+                View Details <i class="bi bi-chevron-down ms-1"></i>
+              </button>
+              <div class="collapse mt-2" id="collapseOutdoor">
+                <div class="card card-body bg-light text-muted small p-2 border-0">
+                  Once in the open area, stay there until the shaking stops. The greatest danger exists directly near exterior walls.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- VEHICLE PROTOCOL -->
+        <div class="col-md-4" data-aos="fade-left" data-aos-delay="300">
+          <div class="card p-4 shadow-sm border-0 h-100">
+            <h5 class="fw-bold text-dark-blue mb-3"><i class="bi bi-car-front me-2"></i>Vehicle Protocol</h5>
+            <p class="text-muted small">Pull over safely to the side of the road away from bridges, tall trees, and power lines.</p>
+            <div class="mt-auto">
+              <button class="btn btn-blue btn-sm w-100 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVehicle">
+                View Details <i class="bi bi-chevron-down ms-1"></i>
+              </button>
+              <div class="collapse mt-2" id="collapseVehicle">
+                <div class="card card-body bg-light text-muted small p-2 border-0">
+                  Stop as quickly as safety permits and stay inside the vehicle until shaking halts completely. Avoid stopping under overpasses.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXTENDED EMERGENCY GO-BAG GUIDE SECTION -->
+    <section class="py-5" id="items" data-aos="fade-up">
+      <div class="container">
+        
+        <div class="text-center mb-4">
+          <h2 class="fw-bold text-dark-blue fst-italic">Extended Emergency Go-Bag Guide</h2>
+          <p class="text-muted">Your checklist is the starting point. This section explains why each item can be useful and how families can organize supplies.</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Water -->
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="card p-4 h-100 shadow-sm border-0 rounded-4">
+              <i class="bi bi-droplet-fill fs-3 text-dark-blue mb-2"></i>
+              <h5 class="fw-bold">Water</h5>
+              <p class="small text-muted">Keep clean drinking water stored in a practical container. Review and replace stored supplies regularly according to the product instructions.</p>
+              <div class="mt-auto">
+                <span class="badge bg-primary-subtle text-primary w-100 py-2">Hydration planning</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Food -->
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="card p-4 h-100 shadow-sm border-0 rounded-4">
+              <i class="bi bi-basket2-fill fs-3 text-dark-blue mb-2"></i>
+              <h5 class="fw-bold">Food</h5>
+              <p class="small text-muted">Choose easy-to-store, non-perishable food that your household can safely eat and rotate supplies before they expire.</p>
+              <div class="mt-auto">
+                <span class="badge bg-primary-subtle text-primary w-100 py-2">Simple & practical</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- First-aid supplies -->
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="card p-4 h-100 shadow-sm border-0 rounded-4">
+              <i class="bi bi-bandaid-fill fs-3 text-dark-blue mb-2"></i>
+              <h5 class="fw-bold">First-aid supplies</h5>
+              <p class="small text-muted">Keep a clearly labelled kit and make sure responsible adults know where it is stored and how to get additional help.</p>
+              <div class="mt-auto">
+                <span class="badge bg-primary-subtle text-primary w-100 py-2">Health support</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Light & batteries -->
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="card p-4 h-100 shadow-sm border-0 rounded-4">
+              <i class="bi bi-lightbulb-fill fs-3 text-dark-blue mb-2"></i>
+              <h5 class="fw-bold">Light & batteries</h5>
+              <p class="small text-muted">A flashlight helps families move around safely during a power interruption. Store compatible batteries safely and check equipment.</p>
+              <div class="mt-auto">
+                <span class="badge bg-primary-subtle text-primary w-100 py-2">Visibility</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Whistle & communication -->
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="card p-4 h-100 shadow-sm border-0 rounded-4">
+              <i class="bi bi-megaphone-fill fs-3 text-dark-blue mb-2"></i>
+              <h5 class="fw-bold">Whistle & communication</h5>
+              <p class="small text-muted">A whistle can help attract attention when speaking loudly is difficult. This can be especially useful in an emergency plan for children or people with communication difficulties.</p>
+              <div class="mt-auto">
+                <span class="badge bg-primary-subtle text-primary w-100 py-2">Signal for attention</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Important information -->
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="card p-4 h-100 shadow-sm border-0 rounded-4">
+              <i class="bi bi-file-earmark-text-fill fs-3 text-dark-blue mb-2"></i>
+              <h5 class="fw-bold">Important information</h5>
+              <p class="small text-muted">Keep useful contact details and copies of important documents in a protected location, following your family's privacy needs.</p>
+              <div class="mt-auto">
+                <span class="badge bg-primary-subtle text-dark-blue w-100 py-2">Family information</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAMILY PLANNING BANNER BOX -->
+        <div class="card p-4 mt-4 border-0 shadow-sm rounded-4" data-aos="fade-up">
+          <div class="row align-items-center">
+            <div class="col-md-8">
+              <h5 class="fw-bold text-dark-blue">A simple family rule: know your bag</h5>
+              <p class="mb-0 text-muted small">Every family member should know where the emergency supplies are kept and who is responsible for checking them. Preparation works best when it is practiced before an emergency.</p>
+            </div>
+            <div class="col-md-4 text-md-end mt-3 mt-md-0">
+              <button class="btn btn-blue px-3 py-2 fw-semibold" data-bs-toggle="modal" data-bs-target="#bagModal">
+                <i class="bi bi-list-task me-1"></i> Go-Bag Planning Tips
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GO-BAG PLANNING TIPS MODAL -->
+    <div class="modal fade" id="bagModal" tabindex="-1" aria-labelledby="bagModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-4 border-0 p-3 shadow-lg">
+          <div class="modal-header border-0 pb-0">
+            <h4 class="modal-title fw-bold text-dark-blue" id="bagModalLabel">Go-Bag Planning Tips</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body py-4 text-secondary">
+            <ol class="ps-3 mb-0 lh-lg small">
+              <li class="mb-2">Choose a bag that is practical for your household.</li>
+              <li class="mb-2">Keep it in a location that responsible family members can find.</li>
+              <li class="mb-2">Check supplies regularly and replace items when needed.</li>
+              <li class="mb-0">Practice your family plan so everyone knows what to do.</li>
+            </ol>
+          </div>
+          <div class="modal-footer border-0 pt-0">
+            <button type="button" class="btn btn-light fw-medium px-4 text-secondary rounded-3" data-bs-dismiss="modal">Got it</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXTENDED GO-BAG EMERGENCY CHECKLIST -->
+    <section class="mb-5" id="gobag-section" data-aos="fade-up">
+      <div class="card p-4 shadow-sm border-0">
+        <h3 class="fw-bold text-dark-blue fst-italic mb-2"><i class="bi bi-backpack2 me-2"></i>Extended Emergency Go-Bag Checklist</h3>
+        <p class="text-muted small mb-4">Maintain at least 72 hours of complete self-sufficiency with these essential items packed and ready:</p>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="form-check mb-2">
+              <input class="form-check-input bag-check" type="checkbox" id="bag1" onclick="updateBagProgress()">
+              <label class="form-check-label text-muted small" for="bag1"><strong>1. Water Supply:</strong> 1 gallon of bottled drinking water per person per day for 3 days.</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input bag-check" type="checkbox" id="bag2" onclick="updateBagProgress()">
+              <label class="form-check-label text-muted small" for="bag2"><strong>2. Non-Perishable Food:</strong> High-energy protein bars, canned goods, and a manual can opener.</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input bag-check" type="checkbox" id="bag3" onclick="updateBagProgress()">
+              <label class="form-check-label text-muted small" for="bag3"><strong>3. First Aid Kit:</strong> Bandages, antiseptic wipes, gauze pads, and personal prescription meds.</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input bag-check" type="checkbox" id="bag4" onclick="updateBagProgress()">
+              <label class="form-check-label text-muted small" for="bag4"><strong>4. Flashlight & Batteries:</strong> Hand-crank or extra battery-powered illumination equipment.</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input bag-check" type="checkbox" id="bag5" onclick="updateBagProgress()">
+              <label class="form-check-label text-muted small" for="bag5"><strong>5. Emergency Whistle:</strong> Loud whistle to signal rescue teams if trapped under rubble.</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-check mb-2">
+              <input class="form-check-input bag-check" type="checkbox" id="bag6" onclick="updateBagProgress()">
+              <label class="form-check-label text-muted small" for="bag6"><strong>6. N95 Dust Masks:</strong> To prevent inhaling pulverized concrete and hazardous debris dust.</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input bag-check" type="checkbox" id="bag7" onclick="updateBagProgress()">
+              <label class="form-check-label text-muted small" for="bag7"><strong>7. Important Documents:</strong> Copies of IDs, insurance papers, and contacts in a waterproof pouch.</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input bag-check" type="checkbox" id="bag8" onclick="updateBagProgress()">
+              <label class="form-check-label text-muted small" for="bag8"><strong>8. Multi-Tool & Duct Tape:</strong> Pocket knife, pliers, and tape for quick temporary repairs or shelter fixing.</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input bag-check" type="checkbox" id="bag9" onclick="updateBagProgress()">
+              <label class="form-check-label text-muted small" for="bag9"><strong>9. Portable Power Bank:</strong> Charged mobile battery pack to keep communication devices active.</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input bag-check" type="checkbox" id="bag10" onclick="updateBagProgress()">
+              <label class="form-check-label text-muted small" for="bag10"><strong>10. Personal Hygiene Items:</strong> Wet wipes, hand sanitizer, garbage bags, and toilet paper.</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4">
+          <div class="d-flex justify-content-between small fw-bold mb-1">
+            <span>Go-Bag Readiness Score</span><span id="bagPercent" class="text-dark-blue">0%</span>
+          </div>
+          <div class="progress"><div id="bagProgressBar" class="progress-bar bg-primary" style="width: 0%"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREPAREDNESS FOR AGE GROUPS -->
+    <section class="mb-5" id="age-prep" data-aos="fade-up">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold text-dark-blue fst-italic">Preparedness by Age Categories</h2>
+        <p class="text-muted">Tailored safety measures for children, adults, elderly persons, and individuals with disabilities</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="100">
+          <div class="card p-4 h-100 shadow-sm border-0">
+            <div class="fs-3 text-primary mb-2"><i class="bi bi-emoji-smile"></i></div>
+            <h5 class="fw-bold">Children & Kids</h5>
+            <p class="text-muted small mb-3">Children should carry a personal whistle attached to their backpack so they can signal if trapped or unable to shout. Practice regular Drop, Cover, and Hold drills.</p>
+            <p class="extra-small text-muted mb-0"><strong>Why it reduces risk:</strong> Instills calm muscle memory and speeds up rescue location.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="200">
+          <div class="card p-4 h-100 shadow-sm border-0">
+            <div class="fs-3 text-success mb-2"><i class="bi bi-phone-vibrate"></i></div>
+            <h5 class="fw-bold">Adults & Guardians</h5>
+            <p class="text-muted small mb-3">Adults must keep mobile phones charged and notifications enabled to receive real-time seismic emergency alerts. Know how to shut off home gas and electricity mains.</p>
+            <p class="extra-small text-muted mb-0"><strong>Why it reduces risk:</strong> Prevents secondary fires and ensures immediate family coordination.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="300">
+          <div class="card p-4 h-100 shadow-sm border-0">
+            <div class="fs-3 text-warning mb-2"><i class="bi bi-person-hearts"></i></div>
+            <h5 class="fw-bold">Elderly Citizens</h5>
+            <p class="text-muted small mb-3">Keep mobility aids (canines, walkers) anchored near beds. Pre-arrange designated family check-in buddies and ensure prescription medicines are in the Go-Bag.</p>
+            <p class="extra-small text-muted mb-0"><strong>Why it reduces risk:</strong> Mitigates mobility hurdles and guarantees continuous medical care.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="400">
+          <div class="card p-4 h-100 shadow-sm border-0">
+            <div class="fs-3 text-danger mb-2"><i class="bi bi-universal-access"></i></div>
+            <h5 class="fw-bold">Disabled Persons</h5>
+            <p class="text-muted small mb-3">Establish evacuation buddy systems, identify accessible ground-floor exits, and keep specialized medical equipment strapped securely against wall studs.</p>
+            <p class="extra-small text-muted mb-0"><strong>Why it reduces risk:</strong> Ensures no individual is left behind during emergency evacuations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREPAREDNESS BY PLACES & WORK AREAS -->
+    <section class="mb-5" id="place-prep" data-aos="fade-up">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold text-dark-blue fst-italic">Preparedness Across Different Workplaces & Public Areas</h2>
+        <p class="text-muted">How schools, hotels, supermarkets, offices, and public spaces prepare to reduce earthquake risk</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6" data-aos="fade-right">
+          <div class="card p-4 h-100 shadow-sm border-0">
+            <h5 class="fw-bold text-dark-blue mb-3"><i class="bi bi-mortarboard me-2"></i>Schools & Educational Institutions</h5>
+            <p class="text-muted small mb-2">Conduct monthly earthquake simulation drills. Secure heavy classroom lockers, bookshelves, and overhead projector screens to walls.</p>
+            <p class="text-muted small mb-0"><strong>Risk Reduction Impact:</strong> Protects students from falling furniture and ensures orderly assembly in school courtyards.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-left">
+          <div class="card p-4 h-100 shadow-sm border-0">
+            <h5 class="fw-bold text-dark-blue mb-3"><i class="bi bi-building me-2"></i>Hotels & Hospitality Areas</h5>
+            <p class="text-muted small mb-2">Place clear multi-lingual evacuation maps in every guest room. Anchor large mirrors and TVs. Train front desk staff on emergency PA broadcast protocols.</p>
+            <p class="text-muted small mb-0"><strong>Risk Reduction Impact:</strong> Guides international guests safely out of unfamiliar buildings without panic.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-right">
+          <div class="card p-4 h-100 shadow-sm border-0">
+            <h5 class="fw-bold text-dark-blue mb-3"><i class="bi bi-shop me-2"></i>Supermarkets & Retail Spaces</h5>
+            <p class="text-muted small mb-3">Install bungee cords or safety lips across high merchandise shelves to prevent heavy canned goods or bottles from raining down on shoppers during shaking.</p>
+            <p class="text-muted small mb-0"><strong>Risk Reduction Impact:</strong> Prevents massive retail aisle injuries and maintains clear aisle exit paths.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-left">
+          <div class="card p-4 h-100 shadow-sm border-0">
+            <h5 class="fw-bold text-dark-blue mb-3"><i class="bi bi-briefcase me-2"></i>Corporate Offices & Workplaces</h5>
+            <p class="text-muted small mb-3">Designate floor safety wardens, establish automated emergency lighting backups, and keep heavy filing cabinets bolted together.</p>
+            <p class="text-muted small mb-0"><strong>Risk Reduction Impact:</strong> Safeguards staff members and ensures rapid coordination to municipal assembly stadiums.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-5" id="community" data-aos="fade-up">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold text-dark-blue fst-italic">Community Support & Recovery Planning</h2>
+        <p class="text-muted">Preparedness also includes planning how communities can support one another after an emergency.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-7" data-aos="fade-right">
+          <div class="card p-4 h-100 shadow-sm border-0">
+            <h4 class="fw-bold text-dark-blue mb-4"><i class="bi bi-geo-alt me-2"></i>Assembly-area preparation</h4>
+            
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="p-3 rounded border h-100 bg-light bg-opacity-50">
+                  <h6 class="fw-bold text-dark mb-1">Tents & shelter</h6>
+                  <p class="text-muted small mb-0">Plan organized temporary spaces where authorities approve them.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="p-3 rounded border h-100 bg-light bg-opacity-50">
+                  <h6 class="fw-bold text-dark mb-1">Food & water</h6>
+                  <p class="text-muted small mb-0">Organize supplies through responsible community systems.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="p-3 rounded border h-100 bg-light bg-opacity-50">
+                  <h6 class="fw-bold text-dark mb-1">Backpacks & essentials</h6>
+                  <p class="text-muted small mb-0">Keep basic personal supplies easy to identify.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="p-3 rounded border h-100 bg-light bg-opacity-50">
+                  <h6 class="fw-bold text-dark mb-1">Information desk</h6>
+                  <p class="text-muted small mb-0">Share verified instructions and family support information.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5" data-aos="fade-left">
+          <div class="card p-4 h-100 shadow-sm border-0">
+            <h4 class="fw-bold text-dark-blue mb-3"><i class="bi bi-heart-fill text-dark-blue me-2"></i>Donation & support campaign</h4>
+            <p class="text-muted small mb-3">
+              A community campaign can encourage people and organizations with resources to support verified relief efforts. Donations should be coordinated through trusted schools, community groups, charities, or official emergency organizations.
+            </p>
+            
+            <div class="d-grid mb-3">
+              <button class="btn btn-outline-primary fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#campaignCollapse">
+                View campaign ideas
+              </button>
+            </div>
+
+            <div class="collapse" id="campaignCollapse">
+              <ul class="text-muted small ps-3 mb-0">
+                <li class="mb-2">Create a clear list of needed supplies.</li>
+                <li class="mb-2">Explain where verified donations can be delivered.</li>
+                <li class="mb-2">Keep records transparent and organized.</li>
+                <li class="mb-0">Prioritize the needs identified by affected communities.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <a href="riskmap.html#direction-map-section" class="btn seemore px-4 py-2 rounded-pill fw-bold">
+          <i class="bi bi-map me-2"></i> Open the Community Planning Map
+        </a>
+      </div>
+    </section>
+
+    <!-- WHY PREPARATION MATTERS -->
+    <section class="text-center py-4 bg-white bg-opacity-50 rounded shadow-sm border px-3" data-aos="zoom-in">
+      <h3 class="fw-bold text-dark-blue fst-italic mb-3">Why Preparation Matters</h3>
+      <p class="text-muted small col-lg-8 mx-auto mb-0">
+        The damage comparison on the Risk Map page shows how disruption can affect people, homes, services and jobs[cite: 5]. We cannot control when an earthquake happens, but preparation, inclusive planning and regular drills can help communities respond with more confidence.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
+    <div id="readinessToast" class="toast align-items-center text-bg-primary border-0 shadow" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body fw-semibold">
+          <i class="bi bi-bell-fill me-2"></i> Go-Bag checklist updated successfully! Stay safe and prepared.
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="py-4 text-white mt-5" data-aos="fade">
+    <div class="container">
+      <div class="row mb-4 text-center text-md-start">
+        <div class="col-12">
+          <p class="text-light opacity-75 small">Earthquake Risk Reduction</p>
+        </div>
+      </div>
+
+      <div class="row text-center text-md-start">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <h5 class="fw-bold mb-3 border-bottom border-light pb-2 d-inline-block">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="../index.html" class="text-white text-decoration-none hover-link">Home</a></li>
+            <li class="mb-2"><a href="riskmap.html" class="text-white text-decoration-none hover-link">Risk Map</a></li>
+            <li class="mb-2"><a href="preparedness.html" class="text-white text-decoration-none hover-link">Preparedness</a></li>
+            <li class="mb-2"><a href="quiz.html" class="text-white text-decoration-none hover-link">Quiz</a></li>
+            <li class="mb-2"><a href="action.html" class="text-white text-decoration-none hover-link">Action</a></li>
+            <li class="mb-2"><a href="aboutus.html" class="text-white text-decoration-none hover-link">About Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6">
+          <h5 class="fw-bold mb-3 border-bottom border-light pb-2 d-inline-block">Contact Us</h5>
+          <ul class="list-unstyled text-light">
+            <li class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i>EDUSN Mandalay Campus</li>
+            <li class="mb-2"><i class="bi bi-envelope-fill me-2"></i>vanguardstudents@gmail.com</li>
+            <li class="mb-2"><i class="bi bi-telephone-fill me-2"></i>+95 0717130406</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="my-4 border-light opacity-50">
+
+      <div class="row">
+        <div class="col-12 text-center">
+          <small class="text-light">Copyright &copy; 2026 VANGUARD. All Rights Reserved.</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function updateBagProgress() {
+      const checkboxes = document.querySelectorAll('.bag-check');
+      let checkedCount = 0;
+      checkboxes.forEach(cb => { if (cb.checked) checkedCount++; });
+      
+      const percentage = Math.round((checkedCount / checkboxes.length) * 100);
+      const progressBar = document.getElementById('bagProgressBar');
+      const percentText = document.getElementById('bagPercent');
+      
+      progressBar.style.width = percentage + '%';
+      percentText.innerText = percentage + '%';
+    }
+
+    function showToast() {
+      const toastEl = document.getElementById('readinessToast');
+      const toast = new bootstrap.Toast(toastEl);
+      toast.show();
+    }
+    
+    function checkAnswer(questionNum, isCorrect) {
+      const feedbackEl = document.getElementById('feedback' + questionNum);
+      if (isCorrect) {
+        feedbackEl.className = "mt-1 small fw-bold text-success";
+        feedbackEl.innerHTML = "🎉 Correct! Excellent safety knowledge.";
+      } else {
+        feedbackEl.className = "mt-1 small fw-bold text-danger";
+        feedbackEl.innerHTML = "❌ Incorrect. Please review our safety protocols and try again!";
+      }
+    }
+
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+  </script>
+</body>
+</html>

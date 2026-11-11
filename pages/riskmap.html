@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VANGURAD</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="shortcut icon" href="../media/logo.png">
+</head>
+<body class="background" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top px-2 px-sm-3" id="navbar-example2" data-aos="fade-down">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+        <img src="../media/logo.png" alt="logo" width="40" height="40" class="img-fluid">
+        <span>VANGUARD</span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto flex-column flex-lg-row gap-2 gap-lg-3 fw-medium my-2 my-lg-0">
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-dark-blue fw-bold" href="riskmap.html">Risk Map</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="preparedness.html">Preparedness</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="quiz.html">Quiz</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="action.html">Action</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="aboutus.html">About Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MENU TOGGLE -->
+  <div class="text-center position-relative px-3">
+    <div class="hero-menu-toggle px-2 d-none d-lg-block">
+      <button class="btn rounded-pill px-3 py-2 fw-semibold d-flex align-items-center gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+        <i class="bi bi-list fs-5"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- OFFCANVAS MENU -->
+  <div class="offcanvas offcanvas-end shadow" tabindex="-1" id="offcanvasNavbar">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title fw-bold text-dark-blue d-flex align-items-center gap-2">
+        <img src="../media/logo.png" alt="logo" width="35" height="35">
+        VANGUARD Menu
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <li class="nav-item mb-2"><a class="nav-link" href="#map-section"><i class="bi bi-geo-alt me-2"></i>Interactive Risk Map</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#legend-section"><i class="bi bi-tags me-2"></i>Map Risk Legend</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#recent-quakes"><i class="bi bi-activity me-2"></i>Significant Regional Earthquakes</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#damage-analysis"><i class="bi bi-table me-2"></i>Estimated Damage Level Comparison</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#magnitude"><i class="bi bi-table me-2"></i>Magnitude Damage Level</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="#direction-map-section"><i class="bi bi-map-fill me-2"></i>Emergency Direction & Stadium Map</a></li>
+        <li class="nav-item mb-2"><a class="nav-link" href="preparedness.html"><i class="bi bi-shield-check me-2"></i>Preparedness & Emergency Go-Bag</a></li>
+      </ul>
+      <div class="mt-4 p-3 rounded border shadow-sm">
+        <small class="text-muted d-block mb-1">Year 9 PBL Project</small>
+        <strong class="text-dark">Earthquake Risk Reduction</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTAINER -->
+  <main class="container py-4 mt-2 mt-md-4">
+
+    <!-- TITLE -->
+    <div class="text-center mb-4" data-aos="fade-up">
+      <h2 class="display-5 fw-bold text-dark-blue fst-italic ">Myanmar Seismic Risk Map</h2>
+      <p class="text-muted mt-2">Focused on Central Myanmar & the Sagaing Fault Zone around Mandalay</p>
+    </div>
+
+    <!-- ALERT BANNER -->
+    <div class="alert alert-primary alert-dismissible fade show shadow-sm mb-4" role="alert" data-aos="fade-up">
+      <i class="bi bi-info-circle-fill me-2"></i> <strong>Interactive Mapping Tip:</strong> Click on any colored circle marker on the map, or click <strong>"See More"</strong> on the regional quake cards below for full telemetry data!
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <div class="row g-4 align-items-start mb-5" id="map-section">
+      <!-- MAP CONTAINER -->
+      <div class="col-lg-9" data-aos="fade-right">
+        <div class="card shadow-sm border-0 position-relative overflow-hidden">
+          <div id="riskMap" class="map-container rounded"></div>
+
+          <div id="earthquakeData">
+            <!-- RED DOTS -->
+            <div class="quake-point" data-lat="21.9800" data-lng="96.0800" data-color="#dc3545" data-title="2025 Mandalay - Sagaing M7.7-7.9 Quake" data-category="Red - Big quake finished" data-date="28 March 2025 at 12:50:52 MMT" data-depth="10 km" data-desc="Major 7.7-7.9 magnitude earthquake struck Sagaing Region with an epicenter close to Mandalay city."></div>
+            <div class="quake-point" data-lat="22.5000" data-lng="95.9600" data-color="#dc3545" data-title="2012 Shwebo M6.8 Quake" data-category="Red - Big quake finished" data-date="11 Nov 2012" data-depth="9.8 km" data-desc="Severe historical strike-slip earthquake causing major surface rupture along the Sagaing Fault."></div>
+            <div class="quake-point" data-lat="20.9000" data-lng="94.8700" data-color="#dc3545" data-title="2016 Chauk M6.8 Quake" data-category="Red - Big quake finished" data-date="24 Aug 2016" data-depth="84 km" data-desc="Deep major quake causing shaking felt throughout central Myanmar and ancient pagodas in Bagan."></div>
+
+            <!-- YELLOW DOTS -->
+            <div class="quake-point" data-lat="21.9300" data-lng="96.0200" data-color="#ffc107" data-title="M 5.2 Earthquake" data-category="Yellow - Small quake finished" data-date="Fri, Oct 23 at 10:36 PM local time" data-depth="15 km" data-desc="A magnitude 5.2 earthquake struck Myanmar at 10:36 pm (local time) on Friday evening."></div>
+            <div class="quake-point" data-lat="22.1500" data-lng="96.2500" data-color="#ffc107" data-title="M 4.6 MYANMAR Event" data-category="Yellow - Small quake finished" data-date="Fri, 23 Oct 2026 17:06:25 UTC" data-depth="110 km" data-desc="Moderate earthquake centered in upper central region at a depth of 110 kilometers."></div>
+            <div class="quake-point" data-lat="21.8200" data-lng="95.9800" data-color="#ffc107" data-title="2023 Sagaing M4.2 Minor Tremor" data-category="Yellow - Small quake finished" data-date="14 Aug 2023" data-depth="12 km" data-desc="Minor shaking recorded 15 km northwest of Mandalay with light tremors reported."></div>
+            <div class="quake-point" data-lat="19.7500" data-lng="96.1000" data-color="#ffc107" data-title="Naypyidaw Region M4.8 Quake" data-category="Yellow - Small quake finished" data-date="12 Feb 2024" data-depth="10 km" data-desc="Shallow minor quake along the southern Sagaing fault near the capital territory."></div>
+            <div class="quake-point" data-lat="17.3300" data-lng="96.4800" data-color="#ffc107" data-title="Bago Region M5.1 Tremor" data-category="Yellow - Small quake finished" data-date="05 May 2023" data-depth="18 km" data-desc="Moderate ground motion recorded south of Central Myanmar."></div>
+
+            <!-- BLUE DOTS -->
+            <div class="quake-point" data-lat="21.9000" data-lng="96.3500" data-color="#0d6efd" data-title="Pyin Oo Lwin Slope Gap" data-category="Blue - Earthquake Prediction / High Risk" data-date="Forecast Model" data-depth="N/A" data-desc="Seismic stress gap identified along the mountain fault slip interface east of Mandalay."></div>
+            <div class="quake-point" data-lat="22.8000" data-lng="96.0000" data-color="#0d6efd" data-title="Northern Sagaing Segment Prediction" data-category="Blue - Earthquake Prediction / High Risk" data-date="Forecast Model" data-depth="N/A" data-desc="Predicted strain accumulation zone based on GPS displacement rate studies."></div>
+            <div class="quake-point" data-lat="20.4000" data-lng="95.8000" data-color="#0d6efd" data-title="Meiktila Fault Intersection Risk" data-category="Blue - Earthquake Prediction / High Risk" data-date="Forecast Model" data-depth="N/A" data-desc="High priority seismic monitoring zone due to high population density nearby."></div>
+          </div>
+
+          <!-- CONTROL ZOOM -->
+          <div class="custom-zoom-controls">
+            <button id="zoomInBtn" class="btn btn-light btn-sm shadow-sm border fw-bold" title="Zoom In"><i class="bi bi-plus-lg"></i></button>
+            <button id="zoomOutBtn" class="btn btn-light btn-sm shadow-sm border fw-bold" title="Zoom Out"><i class="bi bi-dash-lg"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAP SIDE -->
+      <div class="col-lg-3" id="legend-section" data-aos="fade-left">
+        <div class="card shadow-sm border-0 p-3">
+          <h5 class="fw-bold text-dark-blue mb-3"><i class="bi bi-tags me-2"></i>Risk Legend</h5>
+          
+          <div class="d-flex align-items-center mb-3">
+            <span class="dot bg-danger me-2"></span>
+            <div>
+              <strong class="d-block text-danger small">Red Circle</strong>
+              <span class="text-muted extra-small">Big quakes already finished</span>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center mb-3">
+            <span class="dot bg-warning me-2"></span>
+            <div>
+              <strong class="d-block text-warning small">Yellow Circle</strong>
+              <span class="text-muted extra-small">Small quakes already finished</span>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center">
+            <span class="dot bg-primary me-2"></span>
+            <div>
+              <strong class="d-block text-primary small">Blue Circle</strong>
+              <span class="text-muted extra-small">Predictions & seismic risk zones</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EARTHQUAKE CARDS -->
+    <section class="py-3 mb-5" id="recent-quakes">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="fw-bold text-dark-blue fst-italic">Significant Regional Earthquakes</h2>
+        <p class="text-muted">Recent seismic events recorded around Mandalay and across Myanmar</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- CARD 1 -->
+        <div class="col-sm-6 col-md-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card h-100 shadow-sm border-0 overflow-hidden">
+            <img src="../media/Sagaing.jpg" class="card-img-top card-img-custom" alt="Quake">
+            <div class="card-body d-flex flex-column">
+              <span class="badge bg-danger w-auto mb-2 align-self-start">M 7.7-7.9 - Major Quake</span>
+              <h5 class="card-title fw-bold">28 March 2025 Sagaing Quake</h5>
+              <p class="card-text text-muted small flex-grow-1">Struck the Sagaing Region with an epicenter close to Mandalay city, causing strong ground motions across central Myanmar.</p>
+              <button class="btn btn-blue btn-sm fw-bold align-self-start mt-2" data-bs-toggle="modal" data-bs-target="#quakeModal1">
+                See More <i class="bi bi-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="col-sm-6 col-md-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card h-100 shadow-sm border-0 overflow-hidden">
+            <img src="../media/Tremor.jpg" class="card-img-top card-img-custom" alt="Quake">
+            <div class="card-body d-flex flex-column">
+              <span class="badge bg-warning text-dark w-auto mb-2 align-self-start">M 5.2 - Moderate Quake</span>
+              <h5 class="card-title fw-bold">Oct 23 Tremor (10:36 PM)</h5>
+              <p class="card-text text-muted small flex-grow-1">A moderate magnitude 5.2 earthquake struck Myanmar at 10:36 PM (local time), creating noticeable shaking.</p>
+              <button class="btn btn-blue btn-sm fw-bold align-self-start mt-2" data-bs-toggle="modal" data-bs-target="#quakeModal2">
+                See More <i class="bi bi-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="col-sm-6 col-md-4" data-aos="zoom-in" data-aos-delay="300">
+          <div class="card h-100 shadow-sm border-0 overflow-hidden">
+            <img src="../media/eq2.jpg" class="card-img-top card-img-custom" alt="Quake">
+            <div class="card-body d-flex flex-column">
+              <span class="badge bg-info text-dark w-auto mb-2 align-self-start">M 4.6 - Deep Event</span>
+              <h5 class="card-title fw-bold">Fri 23 Oct 2026 Seismic Event</h5>
+              <p class="card-text text-muted small flex-grow-1">Recorded at 17:06:25 UTC at a depth of 110 km in Myanmar, registering as a localized intermediate earthquake.</p>
+              <button class="btn btn-blue btn-sm fw-bold align-self-start mt-2" data-bs-toggle="modal" data-bs-target="#quakeModal3">
+                See More <i class="bi bi-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="col-sm-6 col-md-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card h-100 shadow-sm border-0 overflow-hidden">
+            <img src="../media/Shwebo.jpg" class="card-img-top card-img-custom" alt="Quake">
+            <div class="card-body d-flex flex-column">
+              <span class="badge bg-danger w-auto mb-2 align-self-start">M 6.8 - Shwebo Fault</span>
+              <h5 class="card-title fw-bold">2012 Shwebo Earthquake</h5>
+              <p class="card-text text-muted small flex-grow-1">Severe historical strike-slip earthquake causing major surface rupture along the Sagaing Fault near Shwebo.</p>
+              <button class="btn btn-blue btn-sm fw-bold align-self-start mt-2" data-bs-toggle="modal" data-bs-target="#quakeModal4">
+                See More <i class="bi bi-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="col-sm-6 col-md-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card h-100 shadow-sm border-0 overflow-hidden">
+            <img src="../media/Chauk.jpg" class="card-img-top card-img-custom" alt="Quake">
+            <div class="card-body d-flex flex-column">
+              <span class="badge bg-danger w-auto mb-2 align-self-start">M 6.8 - Bagan Pagodas</span>
+              <h5 class="card-title fw-bold">2016 Chauk Earthquake</h5>
+              <p class="card-text text-muted small flex-grow-1">Deep major quake causing shaking felt throughout central Myanmar and damaging historic ancient pagodas in Bagan.</p>
+              <button class="btn btn-blue btn-sm fw-bold align-self-start mt-2" data-bs-toggle="modal" data-bs-target="#quakeModal5">
+                See More <i class="bi bi-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="col-sm-6 col-md-4" data-aos="zoom-in" data-aos-delay="300">
+          <div class="card h-100 shadow-sm border-0 overflow-hidden">
+            <img src="../media/POL.jpg" class="card-img-top card-img-custom" alt="Quake">
+            <div class="card-body d-flex flex-column">
+              <span class="badge bg-primary w-auto mb-2 align-self-start">Risk Zone - Prediction</span>
+              <h5 class="card-title fw-bold">Pyin Oo Lwin Slope Gap</h5>
+              <p class="card-text text-muted small flex-grow-1">Seismic stress gap identified along the mountain fault slip interface east of Mandalay requiring active structural monitoring.</p>
+              <button class="btn btn-blue btn-sm fw-bold align-self-start mt-2" data-bs-toggle="modal" data-bs-target="#quakeModal6">
+                See More <i class="bi bi-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTIMATED DAMAGE LEVEL DATA SECTION -->
+    <section class="py-4 mb-5" id="damage-analysis" data-aos="fade-up">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold text-dark-blue fst-italic">Estimated Damage Level Comparison</h2>
+        <p class="text-muted">Comparative breakdown across People, Land, Houses, and Jobs for the 6 Major Regional Earthquakes</p>
+      </div>
+
+      <div class="card p-4 shadow-sm border-0 mb-4">
+        <div class="table-responsive">
+          <table class="table table-hover align-middle text-center small mb-0">
+            <thead class="table-primary">
+              <tr>
+                <th>Earthquake Event</th>
+                <th>People Affected</th>
+                <th>Land / Soil Impact</th>
+                <th>Houses / Buildings</th>
+                <th>Jobs & Economy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="fw-bold text-start">2025 Sagaing M7.7-7.9 Quake</td>
+                <td>~120,000 displaced; 450 injured</td>
+                <td>Severe surface rupture & landslides</td>
+                <td>3,500+ unreinforced homes collapsed</td>
+                <td>Local markets halted for 3 weeks</td>
+              </tr>
+              <tr>
+                <td class="fw-bold text-start">2012 Shwebo M6.8 Quake</td>
+                <td>~50,000 affected; 26 casualties</td>
+                <td>Soil liquefaction near Irrawaddy river</td>
+                <td>400+ monasteries & brick houses cracked</td>
+                <td>Agricultural & local trade delayed</td>
+              </tr>
+              <tr>
+                <td class="fw-bold text-start">2016 Chauk M6.8 Quake</td>
+                <td>~35,000 affected; minor injuries</td>
+                <td>Central basin shaking; wide felt area</td>
+                <td>396 ancient pagodas & brick structures damaged</td>
+                <td>Tourism and heritage restoration costs</td>
+              </tr>
+              <tr>
+                <td class="fw-bold text-start">Oct 2026 M5.2 Tremor</td>
+                <td>~5,000 startled; zero casualties</td>
+                <td>Minimal ground displacement</td>
+                <td>Hairline cracks in older brick walls</td>
+                <td>Normal business resumed same day</td>
+              </tr>
+              <tr>
+                <td class="fw-bold text-start">Naypyidaw Region M4.8 Quake</td>
+                <td>~8,000 affected; no injuries</td>
+                <td>Stable rock base damping</td>
+                <td>Minor superficial plaster fall</td>
+                <td>Government administration unaffected</td>
+              </tr>
+              <tr>
+                <td class="fw-bold text-start">Pyin Oo Lwin Prediction Gap</td>
+                <td>High risk for 250,000+ residents</td>
+                <td>Mountain slope instability zones</td>
+                <td>Vulnerable unretrofitted hillside villas</td>
+                <td>Critical tourism & agricultural commerce</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- DAMAGE LEVEL & IMPACT SECTION -->
+    <div class="container py-4" data-aos="fade-up">
+
+      <!-- TOP INFO BANNER -->
+      <div class="alert alert-info border-0 shadow-sm mb-4 d-flex align-items-start gap-3 rounded-3" style="background-color: #e3f2fd; color: #014361;">
+        <i class="bi bi-info-circle-fill fs-5 mt-1"></i>
+        <div>
+          <strong>How to read this section:</strong> higher percentages show a higher estimated level of disruption or impact for that category. Actual impacts can vary because of building strength, population, time of day and local conditions.[cite: 5]
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- LEFT COLUMN-->
+        <div class="col-lg-8">
+          <div class="card p-4 shadow-sm border-0 rounded-4 h-100">
+            <h5 class="fw-bold text-dark-blue mb-3 d-flex align-items-center gap-2">
+              <i class="bi bi-bar-chart-line-fill"></i> Impact by Event
+            </h5>
+
+            <div class="table-responsive">
+              <table class="table table-borderless align-middle mb-0 small">
+                <thead>
+                  <tr class="border-bottom text-muted">
+                    <th class="py-3">Earthquake</th>
+                    <th class="py-3 text-center">People</th>
+                    <th class="py-3 text-center">Homes</th>
+                    <th class="py-3 text-center">Land / Infrastructure</th>
+                    <th class="py-3 text-center">Jobs / Economy</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-bottom">
+                    <td class="fw-bold py-3">2025 Sagaing M7.7–7.9</td>
+                    <td class="text-center"><span class="badge bg-danger rounded-pill px-3 py-1 fw-semibold">Very High</span></td>
+                    <td class="text-center"><span class="badge bg-danger rounded-pill px-3 py-1 fw-semibold">Very High</span></td>
+                    <td class="text-center"><span class="badge bg-danger rounded-pill px-3 py-1 fw-semibold">Very High</span></td>
+                    <td class="text-center"><span class="badge bg-danger rounded-pill px-3 py-1 fw-semibold">Very High</span></td>
+                  </tr>
+                  <tr class="border-bottom">
+                    <td class="fw-bold py-3">2012 Shwebo M6.8</td>
+                    <td class="text-center"><span class="badge bg-warning text-dark rounded-pill px-3 py-1 fw-semibold">High</span></td>
+                    <td class="text-center"><span class="badge bg-warning text-dark rounded-pill px-3 py-1 fw-semibold">High</span></td>
+                    <td class="text-center"><span class="badge bg-warning text-dark rounded-pill px-3 py-1 fw-semibold">High</span></td>
+                    <td class="text-center"><span class="badge bg-warning text-dark rounded-pill px-3 py-1 fw-semibold">High</span></td>
+                  </tr>
+                  <tr class="border-bottom">
+                    <td class="fw-bold py-3">2016 Chauk M6.8</td>
+                    <td class="text-center"><span class="badge bg-warning text-dark rounded-pill px-3 py-1 fw-semibold">High</span></td>
+                    <td class="text-center"><span class="badge bg-warning text-dark rounded-pill px-3 py-1 fw-semibold" style="font-size: 0.7rem;">Medium–High</span></td>
+                    <td class="text-center"><span class="badge bg-warning text-dark rounded-pill px-3 py-1 fw-semibold">High</span></td>
+                    <td class="text-center"><span class="badge bg-warning text-dark rounded-pill px-3 py-1 fw-semibold" style="font-size: 0.7rem;">Medium–High</span></td>
+                  </tr>
+                  <tr class="border-bottom">
+                    <td class="fw-bold py-3">M5.2 Tremor</td>
+                    <td class="text-center"><span class="badge bg-info text-dark rounded-pill px-3 py-1 fw-semibold">Medium</span></td>
+                    <td class="text-center"><span class="badge bg-info text-dark rounded-pill px-3 py-1 fw-semibold">Medium</span></td>
+                    <td class="text-center"><span class="badge bg-info text-dark rounded-pill px-3 py-1 fw-semibold" style="font-size: 0.7rem;">Low–Medium</span></td>
+                    <td class="text-center"><span class="badge bg-info text-dark rounded-pill px-3 py-1 fw-semibold" style="font-size: 0.7rem;">Low–Medium</span></td>
+                  </tr>
+                  <tr class="border-bottom">
+                    <td class="fw-bold py-3">M4.6 Deep Event</td>
+                    <td class="text-center"><span class="badge bg-success rounded-pill px-3 py-1 fw-semibold">Low</span></td>
+                    <td class="text-center"><span class="badge bg-success rounded-pill px-3 py-1 fw-semibold">Low</span></td>
+                    <td class="text-center"><span class="badge bg-success rounded-pill px-3 py-1 fw-semibold">Low</span></td>
+                    <td class="text-center"><span class="badge bg-success rounded-pill px-3 py-1 fw-semibold">Low</span></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold py-3">Prediction / Risk Zones</td>
+                    <td class="text-center"><span class="badge bg-primary rounded-pill px-3 py-1 fw-semibold">Potential</span></td>
+                    <td class="text-center"><span class="badge bg-primary rounded-pill px-3 py-1 fw-semibold">Potential</span></td>
+                    <td class="text-center"><span class="badge bg-primary rounded-pill px-3 py-1 fw-semibold">Potential</span></td>
+                    <td class="text-center"><span class="badge bg-primary rounded-pill px-3 py-1 fw-semibold">Potential</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN-->
+        <div class="col-lg-4">
+          <div class="card p-4 shadow-sm border-0 rounded-4 h-100">
+            <h5 class="fw-bold text-dark-blue mb-3">Why impacts are different</h5>
+
+            <div class="accordion accordion-flush" id="impactAccordion">
+              <!-- Item 1-->
+              <div class="accordion-item border rounded-3 mb-2 overflow-hidden shadow-sm">
+                <h2 class="accordion-header">
+                  <button class="accordion-button fw-bold collapsed py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePeople">
+                    People & families
+                  </button>
+                </h2>
+                <div id="collapsePeople" class="accordion-collapse collapse " data-bs-parent="#impactAccordion">
+                  <div class="accordion-body text-muted small">
+                    Population density, building safety and access to emergency support can change how strongly people and families are affected.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="accordion-item border rounded-3 mb-2 overflow-hidden shadow-sm">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed fw-bold py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHomes">
+                    Homes & buildings
+                  </button>
+                </h2>
+                <div id="collapseHomes" class="accordion-collapse collapse" data-bs-parent="#impactAccordion">
+                  <div class="accordion-body text-muted small">
+                    Structural integrity, construction materials, and retrofitting standards determine building vulnerability during seismic shaking.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="accordion-item border rounded-3 mb-2 overflow-hidden shadow-sm">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed fw-bold py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLand">
+                    Land & services
+                  </button>
+                </h2>
+                <div id="collapseLand" class="accordion-collapse collapse" data-bs-parent="#impactAccordion">
+                  <div class="accordion-body text-muted small">
+                    Soil conditions, proximity to fault lines, and lifeline utility robustness impact immediate disaster recovery timelines.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOTTOM 4 CARDS -->
+      <div class="row g-4 mt-2">
+        <div class="col-sm-6 col-lg-3">
+          <div class="card p-4 shadow-sm border-0 rounded-4 h-100">
+            <h6 class="fw-bold text-dark-blue mb-2">People</h6>
+            <p class="text-muted small mb-3">Estimated disruption from injuries, displacement and interrupted daily life[cite: 5].</p>
+            <div class="progress mb-2" style="height: 10px;"><div class="progress-bar bg-primary rounded-pill" style="width: 85%"></div></div>
+            <small class="text-muted" style="font-size: 0.75rem;">Highest comparison level: major regional event</small>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="card p-4 shadow-sm border-0 rounded-4 h-100">
+            <h6 class="fw-bold text-dark-blue mb-2">Homes</h6>
+            <p class="text-muted small mb-3">Estimated pressure on housing, repairs and temporary shelter needs.</p>
+            <div class="progress mb-2" style="height: 10px;"><div class="progress-bar bg-primary rounded-pill" style="width: 75%"></div></div>
+            <small class="text-muted" style="font-size: 0.75rem;">Stronger buildings can reduce risk.</small>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="card p-4 shadow-sm border-0 rounded-4 h-100">
+            <h6 class="fw-bold text-dark-blue mb-2">Land & services</h6>
+            <p class="text-muted small mb-3">Road access, utilities and important public infrastructure.</p>
+            <div class="progress mb-2" style="height: 10px;"><div class="progress-bar bg-primary rounded-pill" style="width: 80%"></div></div>
+            <small class="text-muted" style="font-size: 0.75rem;">Recovery depends on access and repairs.</small>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="card p-4 shadow-sm border-0 rounded-4 h-100">
+            <h6 class="fw-bold text-dark-blue mb-2">Jobs & economy</h6>
+            <p class="text-muted small mb-3">Estimated interruption to workplaces, shops and local services.</p>
+            <div class="progress mb-2" style="height: 10px;"><div class="progress-bar bg-primary rounded-pill" style="width: 70%"></div></div>
+            <small class="text-muted" style="font-size: 0.75rem;">Prepared workplaces may reopen more safely.</small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <section class="py-4 mb-5" id="magnitude" data-aos="fade-up">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold text-dark-blue fst-italic">Magnitude Damage Level & Preparedness Guide</h2>
+          <p class="text-muted">Click a magnitude tier on the left to view its specific damage level and safety preparation.</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Left Navigation Buttons (Tabs) -->
+          <div class="col-lg-4">
+            <div class="card p-3 shadow-sm border-0">
+              <h5 class="fw-bold text-dark-blue mb-3"><i class="bi bi-speedometer2 me-2"></i>Magnitude Tiers</h5>
+              <div class="nav flex-column nav-pills gap-2" id="magnitudeTab" role="tablist" aria-orientation="vertical">
+                <button class="nav-link active text-start fw-semibold py-2 px-3 rounded" id="mag4-tab" data-bs-toggle="pill" data-bs-target="#mag4-content" type="button" role="tab" aria-selected="true">
+                  Magnitude 4.0 - 4.9 (Minor)
+                </button>
+                <button class="nav-link text-start fw-semibold py-2 px-3 rounded" id="mag5-tab" data-bs-toggle="pill" data-bs-target="#mag5-content" type="button" role="tab" aria-selected="false">
+                  Magnitude 5.0 - 5.9 (Moderate)
+                </button>
+                <button class="nav-link text-start fw-semibold py-2 px-3 rounded" id="mag6-tab" data-bs-toggle="pill" data-bs-target="#mag6-content" type="button" role="tab" aria-selected="false">
+                  Magnitude 6.0 - 6.9 (Strong)
+                </button>
+                <button class="nav-link text-start fw-semibold py-2 px-3 rounded" id="mag7-tab" data-bs-toggle="pill" data-bs-target="#mag7-content" type="button" role="tab" aria-selected="false">
+                  Magnitude 7.0+ (Major / Great)
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Content Body -->
+          <div class="col-lg-8">
+            <div class="card shadow-sm border-0 p-4 h-100">
+              <div class="tab-content" id="magnitudeTabContent">
+                
+                <!-- MAGNITUDE 4 CONTENT -->
+                <div class="tab-pane fade show active" id="mag4-content" role="tabpanel" aria-labelledby="mag4-tab">
+                  <h4 class="fw-bold text-success mb-3"><i class="bi bi-activity me-2"></i>Magnitude 4.0 – 4.9 (Minor Shaking)</h4>
+                  <p class="text-muted small"><strong>Estimated Damage:</strong> Generally light damage to indoor objects. Standing vehicles may rock slightly. Dishes rattle, windows crack slightly in poorly built structures, and hanging objects swing noticeably.</p>
+                  <div class="p-3 bg-light rounded border shadow-sm mt-3">
+                    <h6 class="fw-bold text-dark small mb-1"><i class="bi bi-check2-circle text-success me-2"></i>What to Prepare:</h6>
+                    <p class="extra-small text-muted mb-0">Secure hanging photo frames and light fixtures. Ensure family members know how to react instantly if shaking intensifies.</p>
+                  </div>
+                </div>
+
+                <!-- MAGNITUDE 5 CONTENT -->
+                <div class="tab-pane fade" id="mag5-content" role="tabpanel" aria-labelledby="mag5-tab">
+                  <h4 class="fw-bold text-info mb-3"><i class="bi bi-exclamation-triangle me-2"></i>Magnitude 5.0 – 5.9 (Moderate Damage)</h4>
+                  <p class="text-muted small"><strong>Estimated Damage:</strong> Can cause major damage to poorly constructed buildings. Slight to moderate damage to well-built structures. Unsecured furniture may overturn, and heavy plaster walls can crack.</p>
+                  <div class="p-3 bg-light rounded border shadow-sm mt-3">
+                    <h6 class="fw-bold text-dark small mb-1"><i class="bi bi-check2-circle text-success me-2"></i>What to Prepare:</h6>
+                    <p class="extra-small text-muted mb-0">Anchor heavy bookshelves and televisions to wall studs. Inspect home gas lines and maintain a basic 72-hour Go-Bag.</p>
+                  </div>
+                </div>
+
+                <!-- MAGNITUDE 6 CONTENT -->
+                <div class="tab-pane fade" id="mag6-content" role="tabpanel" aria-labelledby="mag6-tab">
+                  <h4 class="fw-bold text-warning mb-3"><i class="bi bi-shield-exclamation me-2"></i>Magnitude 6.0 – 6.9 (Strong & Destructive)</h4>
+                  <p class="text-muted small"><strong>Estimated Damage:</strong> Destructive across populated areas up to tens of kilometers away. Substantial damage to ordinary brick buildings with partial collapses, cracked underground utility pipes, and potential soil liquefaction in saturated areas.</p>
+                  <div class="p-3 bg-light rounded border shadow-sm mt-3">
+                    <h6 class="fw-bold text-dark small mb-1"><i class="bi bi-check2-circle text-success me-2"></i>What to Prepare:</h6>
+                    <p class="extra-small text-muted mb-0">Retrofit older unreinforced masonry structures. Conduct regular Drop, Cover, and Hold drills. Keep emergency water reserves (1 gallon per person daily).</p>
+                  </div>
+                </div>
+
+                <!-- MAGNITUDE 7 CONTENT -->
+                <div class="tab-pane fade" id="mag7-content" role="tabpanel" aria-labelledby="mag7-tab">
+                  <h4 class="fw-bold text-danger  mb-3"><i class="bi bi-building-fill-x me-2"></i>Magnitude 7.0 and Above (Major / Catastrophic)</h4>
+                  <p class="text-muted small"><strong>Estimated Damage:</strong> Major catastrophic damage. Most masonry and frame structures destroyed along with foundations. Serious damage to bridges, dams, and railway lines. Widespread landslides and severe economic disruption.</p>
+                  <div class="p-3 bg-light rounded border shadow-sm mt-3">
+                    <h6 class="fw-bold text-dark small mb-1"><i class="bi bi-check2-circle text-success me-2"></i>What to Prepare:</h6>
+                    <p class="extra-small text-muted mb-0">Strict adherence to modern building codes (base isolators, shear walls). Establish community stadium evacuation routes and pre-designated family check-in communication protocols.</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EMERGENCY DIRECTION MAP -->
+    <section class="py-4 mb-5" id="direction-map-section" data-aos="fade-up">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold text-dark-blue fst-italic">Emergency Assembly Points & Direction Map</h2>
+        <p class="text-muted">Click the open stadiums below to inspect street routes, emergency relief tents, water stations, and donation campaigns.</p>
+      </div>
+
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-8" data-aos="fade-right">
+          <div class="card shadow-sm border-0 position-relative overflow-hidden">
+            <div id="directionMap" class="map-container rounded" style="height: 420px;"></div>
+            <div class="custom-zoom-controls">
+              <button id="dirZoomIn" class="btn btn-light btn-sm shadow-sm border fw-bold" title="Zoom In"><i class="bi bi-plus-lg"></i></button>
+              <button id="dirZoomOut" class="btn btn-light btn-sm shadow-sm border fw-bold" title="Zoom Out"><i class="bi bi-dash-lg"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4" data-aos="fade-left">
+          <div class="card shadow-sm border-0 p-4 h-100">
+            <h5 class="fw-bold text-dark-blue fst-italic mb-3"><i class="bi bi-geo-alt-fill me-2"></i>Stadium Relief Hubs</h5>
+            <p class="text-muted small">Major open stadiums designated for post-earthquake evacuation, relief tents, emergency food/water supplies, and donor campaigns:</p>
+            <ul class="list-unstyled small text-muted mb-4">
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Mandalay Yathar Stadium:</strong> Tent camp, medical station & clean water tanks.</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Aung Myay Thar San Ground:</strong> Emergency supply distribution & donor reception.</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Ba Htoo Stadium:</strong> Main command center, rescue helicopters & family tracing desk.</li>
+            </ul>
+            <a href="preparedness.html" class="btn seemore px-4 py-2 rounded-pill fw-bold text-center justify-content-center">
+              View Preparedness Guide <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- OFFCANVAS FOR MAP MARKERS -->
+  <div class="offcanvas offcanvas-bottom h-auto shadow" tabindex="-1" id="mapPointOffcanvas">
+    <div class="offcanvas-header bg-white border-bottom py-2">
+      <h5 class="offcanvas-title fw-bold text-primary d-flex align-items-center gap-2">
+        <i class="bi bi-geo-alt-fill" id="modalIcon"></i> <span id="modalTitleText">Earthquake Information</span>
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body py-3">
+      <div class="row g-2">
+        <div class="col-md-6">
+          <p class="mb-1 small"><strong>Category:</strong> <span id="modalCategory">Select a marker</span></p>
+          <p class="mb-1 small"><strong>Date / Time:</strong> <span id="modalDate">-</span></p>
+        </div>
+        <div class="col-md-6">
+          <p class="mb-1 small"><strong>Focal Depth:</strong> <span id="modalDepth">-</span></p>
+          <p class="mb-1 small"><strong>Overview:</strong> <span id="modalDesc">Click any circle marker on the map to display seismic data details.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STADIUM OFF-CANVAS / MODAL POPUP -->
+  <div class="modal fade" id="stadiumModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-bottom">
+          <h5 class="modal-title fw-bold text-dark-blue" id="stadiumModalTitle"><i class="bi bi-house-heart me-2"></i>Relief Stadium Hub</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-muted small" id="stadiumModalDesc">Relief camp details, tents, water distribution, and medical aid.</p>
+          <div class="p-3 bg-light rounded border mb-3">
+            <h6 class="fw-bold text-dark small mb-1"><i class="bi bi-gift me-2 text-danger"></i>Donor & Philanthropist Campaign</h6>
+            <p class="extra-small text-muted mb-0">Donors can visit this stadium hub to provide financial aid, backpacks, canned food, and medical supplies directly to victims.</p>
+          </div>
+        </div>
+        <div class="modal-footer"><button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODALS FOR CARDS -->
+  <div class="modal fade" id="quakeModal1" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-bottom">
+          <h5 class="modal-title fw-bold text-danger"><i class="bi bi-exclamation-triangle-fill me-2"></i>2025 Myanmar Earthquake Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="../media/Sagaing.jpg" class="img-fluid rounded mb-3" alt="Quake detail">
+          <ul class="list-unstyled small">
+            <li class="mb-2"><strong>Magnitude:</strong> 7.7 - 7.9 M<sub>w</sub></li>
+            <li class="mb-2"><strong>Date & Time:</strong> 28 March 2025 at 12:50:52 MMT</li>
+            <li class="mb-2"><strong>Epicenter:</strong> Sagaing Region, close to Mandalay City</li>
+            <li class="mb-2"><strong>Category:</strong> Major Historical Earthquake (Red)</li>
+          </ul>
+          <p class="text-muted small">This intense earthquake occurred along the active Sagaing Fault System, causing powerful ground displacements throughout Mandalay and surrounding townships.</p>
+        </div>
+        <div class="modal-footer"><button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="quakeModal2" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-bottom">
+          <h5 class="modal-title fw-bold text-warning"><i class="bi bi-activity me-2"></i>Magnitude 5.2 Earthquake Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="../media/Tremor.jpg" class="img-fluid rounded mb-3" alt="Quake detail">
+          <ul class="list-unstyled small">
+            <li class="mb-2"><strong>Magnitude:</strong> 5.2 M<sub>w</sub></li>
+            <li class="mb-2"><strong>Time:</strong> Oct 23 at 10:36 PM (Local Time)</li>
+            <li class="mb-2"><strong>Location:</strong> Central Myanmar Fault Boundary</li>
+            <li class="mb-2"><strong>Category:</strong> Moderate Earthquake (Yellow)</li>
+          </ul>
+          <p class="text-muted small">Felt distinctly across local communities. Shaking was moderate with no major structural collapse reported.</p>
+        </div>
+        <div class="modal-footer"><button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="quakeModal3" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-bottom">
+          <h5 class="modal-title fw-bold text-primary"><i class="bi bi-geo-fill me-2"></i>M 4.6 Deep Seismic Event</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="../media/eq2.jpg" class="img-fluid rounded mb-3" alt="Quake detail">
+          <ul class="list-unstyled small">
+            <li class="mb-2"><strong>Magnitude:</strong> 4.6 M<sub>w</sub></li>
+            <li class="mb-2"><strong>Date & Time:</strong> Fri, 23 Oct 2026 17:06:25 UTC</li>
+            <li class="mb-2"><strong>Focal Depth:</strong> 110.0 km</li>
+            <li class="mb-2"><strong>Category:</strong> Minor Intermediate Event (Yellow)</li>
+          </ul>
+          <p class="text-muted small">Due to its deep hypocenter (110 km underground), ground shaking was attenuated over a broad surface area.</p>
+        </div>
+        <div class="modal-footer"><button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="quakeModal4" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-bottom">
+          <h5 class="modal-title fw-bold text-danger"><i class="bi bi-exclamation-octagon me-2"></i>2012 Shwebo M6.8 Quake</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="../media/Shwebo.jpg" class="img-fluid rounded mb-3" alt="Quake detail">
+          <ul class="list-unstyled small">
+            <li class="mb-2"><strong>Magnitude:</strong> 6.8 M<sub>w</sub></li>
+            <li class="mb-2"><strong>Date:</strong> 11 November 2012</li>
+            <li class="mb-2"><strong>Focal Depth:</strong> 9.8 km</li>
+            <li class="mb-2"><strong>Impact:</strong> Significant structural damage to monasteries and bridges in Shwebo and Kyaukmyaung.</li>
+          </ul>
+        </div>
+        <div class="modal-footer"><button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="quakeModal5" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-bottom">
+          <h5 class="modal-title fw-bold text-danger"><i class="bi bi-exclamation-triangle me-2"></i>2016 Chauk M6.8 Quake</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="../media/Chauk.jpg" class="img-fluid rounded mb-3" alt="Quake detail">
+          <ul class="list-unstyled small">
+            <li class="mb-2"><strong>Magnitude:</strong> 6.8 M<sub>w</sub></li>
+            <li class="mb-2"><strong>Date:</strong> 24 August 2016</li>
+            <li class="mb-2"><strong>Focal Depth:</strong> 84.0 km</li>
+            <li class="mb-2"><strong>Impact:</strong> Shaking was widely felt across Myanmar, India, and Bangladesh, impacting nearly 400 ancient brick pagodas in Bagan.</li>
+          </ul>
+        </div>
+        <div class="modal-footer"><button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="quakeModal6" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-bottom">
+          <h5 class="modal-title fw-bold text-primary"><i class="bi bi-shield-shaded me-2"></i>Pyin Oo Lwin Seismic Stress Gap</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="../media/POL.jpg" class="img-fluid rounded mb-3" alt="Quake detail">
+          <ul class="list-unstyled small">
+            <li class="mb-2"><strong>Type:</strong> Earthquake Prediction / High Risk Zone</li>
+            <li class="mb-2"><strong>Location:</strong> Eastern Highland Fault Margin</li>
+            <li class="mb-2"><strong>Analysis:</strong> Continuous GPS monitoring highlights crustal strain accumulation that warrants strict building codes and community drills.</li>
+          </ul>
+        </div>
+        <div class="modal-footer"><button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="py-4 text-white mt-5" data-aos="fade">
+    <div class="container">
+      <div class="row mb-4 text-center text-md-start">
+        <div class="col-12">
+          <p class="text-light opacity-75 small">Earthquake Risk Reduction</p>
+        </div>
+      </div>
+
+      <div class="row text-center text-md-start">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <h5 class="fw-bold mb-3 border-bottom border-light pb-2 d-inline-block">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="../index.html" class="text-white text-decoration-none hover-link">Home</a></li>
+            <li class="mb-2"><a href="riskmap.html" class="text-white text-decoration-none hover-link">Risk Map</a></li>
+            <li class="mb-2"><a href="preparedness.html" class="text-white text-decoration-none hover-link">Preparedness</a></li>
+            <li class="mb-2"><a href="quiz.html" class="text-white text-decoration-none hover-link">Quiz</a></li>
+            <li class="mb-2"><a href="action.html" class="text-white text-decoration-none hover-link">Action</a></li>
+            <li class="mb-2"><a href="aboutus.html" class="text-white text-decoration-none hover-link">About Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6">
+          <h5 class="fw-bold mb-3 border-bottom border-light pb-2 d-inline-block">Contact Us</h5>
+          <ul class="list-unstyled text-light">
+            <li class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i>EDUSN Mandalay Campus</li>
+            <li class="mb-2"><i class="bi bi-envelope-fill me-2"></i>vanguardstudents@gmail.com</li>
+            <li class="mb-2"><i class="bi bi-telephone-fill me-2"></i>+95 0717130406</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="my-4 border-light opacity-50">
+
+      <div class="row">
+        <div class="col-12 text-center">
+          <small class="text-light">Copyright &copy; 2026 VANGUARD. All Rights Reserved.</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Leaflet Risk Map Initialization
+    const map = L.map('riskMap', { zoomControl: false }).setView([21.9588, 96.0891], 7);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+
+    document.getElementById('zoomInBtn').addEventListener('click', () => map.zoomIn());
+    document.getElementById('zoomOutBtn').addEventListener('click', () => map.zoomOut());
+
+    const mapOffcanvas = new bootstrap.Offcanvas(document.getElementById('mapPointOffcanvas'));
+
+    document.querySelectorAll('.quake-point').forEach(el => {
+      const lat = el.dataset.lat;
+      const lng = el.dataset.lng;
+      const color = el.dataset.color;
+
+      const circle = L.circleMarker([lat, lng], {
+        color: color,
+        fillColor: color,
+        fillOpacity: 0.75,
+        radius: 11
+      }).addTo(map);
+
+      circle.on('click', () => {
+        document.getElementById('modalTitleText').innerText = el.dataset.title;
+        document.getElementById('modalCategory').innerText = el.dataset.category;
+        document.getElementById('modalCategory').style.color = color;
+        document.getElementById('modalDate').innerText = el.dataset.date;
+        document.getElementById('modalDepth').innerText = el.dataset.depth;
+        document.getElementById('modalDesc').innerText = el.dataset.desc;
+        document.getElementById('modalIcon').style.color = color;
+
+        mapOffcanvas.show();
+      });
+    });
+
+    // Leaflet Second Direction / Stadium Map Initialization
+    const dirMap = L.map('directionMap', { zoomControl: false }).setView([21.9750, 96.0800], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: '&copy; OpenStreetMap'
+    }).addTo(dirMap);
+
+    document.getElementById('dirZoomIn').addEventListener('click', () => dirMap.zoomIn());
+    document.getElementById('dirZoomOut').addEventListener('click', () => dirMap.zoomOut());
+
+    const stadiumModal = new bootstrap.Modal(document.getElementById('stadiumModal'));
+
+    const stadiums = [
+      { name: "Mandalay Yathar Stadium Assembly Point", lat: 21.9830, lng: 96.0920, desc: "Primary open stadium evacuation center equipped with emergency relief tents, medical first-aid stations, and water filtration units." },
+      { name: "Aung Myay Thar San Stadium Hub", lat: 21.9620, lng: 96.0710, desc: "Secondary community shelter and philanthropist donation collection center for food, backpacks, and blankets." },
+      { name: "Ba Htoo Stadium Command Center", lat: 21.9780, lng: 96.0850, desc: "Main municipal emergency headquarters, rescue coordination, and distribution point for displaced families." }
+    ];
+
+    stadiums.forEach(st => {
+      const marker = L.marker([st.lat, st.lng]).addTo(dirMap);
+      marker.bindPopup(`<b>${st.name}</b><br><span class='text-muted small'>Click for street route & donation details</span>`);
+      marker.on('click', () => {
+        document.getElementById('stadiumModalTitle').innerHTML = `<i class="bi bi-house-heart me-2"></i>${st.name}`;
+        document.getElementById('stadiumModalDesc').innerText = st.desc;
+        stadiumModal.show();
+      });
+    });
+
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+  </script>
+</body>
+</html>
